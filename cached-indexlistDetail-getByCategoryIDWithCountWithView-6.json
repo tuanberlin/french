@@ -1,0 +1,286 @@
+  <html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script>  <title>Category Video Manage</title>
+
+</head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nouvelles vidéos (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Nouvelles (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Débutants (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Écoute (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulaire (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En train de lire (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 L'écriture (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Prononciation (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlant (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Examens (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Chansons françaises (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Films français (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Français pour les enfants (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Etudier en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vie en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Nombres (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Achats (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Aliments (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Emplois (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Santé (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Regardé (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Nouvelles (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Etudier en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vie en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Regardé (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 L'écriture (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En train de lire (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Examens (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Chansons françaises (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Débutants (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlant (6)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Aliments (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Films français (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nouvelles vidéos (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Écoute (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulaire (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Français pour les enfants (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Nombres (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Emplois (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Santé (8)</a></div>
+</div>
+<br/>
+<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(0)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(6)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(8)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(11)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(8)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(5)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(3)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(7)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(6)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(5)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(5)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(9)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(0)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 paris L(0)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(8)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(6)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(10)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(8)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 2769 Videos<br/>Số lượng Videos trong DB: 130 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Category Video Manage</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>CategoryID</th>
+      <th>ListVideo count</th>
+      <th>Add More List to this Category</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+	  <th>CategoryID</th>
+      <th>ListVideo count</th>
+      <th>Add More List to this Category</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>30</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLWHCV00OLMW9K0Jjth4ICYyGn2gh-Fpsv" title="Learn French vocabulary with songs (1/40), apprendre le vocabulaire anglais avec des chansons 1"><img width="100px" src="https://i.ytimg.com/vi/2dLthauGOQA/mqdefault.jpg" alt="Learn French vocabulary with songs (1/40), apprendre le vocabulaire anglais avec des chansons 1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLWHCV00OLMW9K0Jjth4ICYyGn2gh-Fpsv" title="Learn French vocabulary with songs (1/40), apprendre le vocabulaire anglais avec des chansons 1">Learn French vocabulary with songs (1/40), apprendre le vocabulaire anglais avec des chansons 1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>22</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLWHCV00OLMW9K0Jjth4ICYyGn2gh-Fpsv" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>29</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqpzrpOz5rR4VfyR9yOFJEAxSEJumJoeJ" title="Learn French - French Numbers"><img width="100px" src="https://i.ytimg.com/vi/UQI_ztvjzqM/mqdefault.jpg" alt="Learn French - French Numbers"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqpzrpOz5rR4VfyR9yOFJEAxSEJumJoeJ" title="Learn French - French Numbers">Learn French - French Numbers</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLqpzrpOz5rR4VfyR9yOFJEAxSEJumJoeJ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>28</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwAIibk_eotbiiPhJmctnuajnKWw9ZJMH" title="learn French vocabulary | Adjectives Lesson | Describing Bad Feelings | Quantity Adjectives"><img width="100px" src="https://i.ytimg.com/vi/JLjMDHWV9oI/mqdefault.jpg" alt="learn French vocabulary | Adjectives Lesson | Describing Bad Feelings | Quantity Adjectives"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwAIibk_eotbiiPhJmctnuajnKWw9ZJMH" title="learn French vocabulary | Adjectives Lesson | Describing Bad Feelings | Quantity Adjectives">learn French vocabulary | Adjectives Lesson | Describing Bad Feelings | Quantity Adjectives</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>8</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLwAIibk_eotbiiPhJmctnuajnKWw9ZJMH" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>27</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtzy24HfZQfLQpk499LPR_Jzcjwo8DQB6" title="#Learn French #Vocabulary #Various situations #17 minutes"><img width="100px" src="https://i.ytimg.com/vi/2l8bnYF3TFQ/mqdefault.jpg" alt="#Learn French #Vocabulary #Various situations #17 minutes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtzy24HfZQfLQpk499LPR_Jzcjwo8DQB6" title="#Learn French #Vocabulary #Various situations #17 minutes">#Learn French #Vocabulary #Various situations #17 minutes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>45</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtzy24HfZQfLQpk499LPR_Jzcjwo8DQB6" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>26</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLp4gRI4VdKFAe_cgw62Z-lvTh6phga3Hk" title="Vocabulary Insects and Bugs in French"><img width="100px" src="https://i.ytimg.com/vi/6_pDeHeogpA/mqdefault.jpg" alt="Vocabulary Insects and Bugs in French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLp4gRI4VdKFAe_cgw62Z-lvTh6phga3Hk" title="Vocabulary Insects and Bugs in French">Vocabulary Insects and Bugs in French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>47</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLp4gRI4VdKFAe_cgw62Z-lvTh6phga3Hk" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>25</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N2EYCbecsQ6nDhw_6sJX5zq" title="Sweet Food in French (basic French vocabulary from Learn French With Alexa)"><img width="100px" src="https://i.ytimg.com/vi/ewOipmpGsmI/mqdefault.jpg" alt="Sweet Food in French (basic French vocabulary from Learn French With Alexa)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N2EYCbecsQ6nDhw_6sJX5zq" title="Sweet Food in French (basic French vocabulary from Learn French With Alexa)">Sweet Food in French (basic French vocabulary from Learn French With Alexa)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>0</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLV1-QgpUU7N2EYCbecsQ6nDhw_6sJX5zq" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>23</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N1lWv1Y4cLfWGBFS_r8qFr3" title="European Countries in French"><img width="100px" src="https://i.ytimg.com/vi/Exsc1Gw55m0/mqdefault.jpg" alt="European Countries in French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N1lWv1Y4cLfWGBFS_r8qFr3" title="European Countries in French">European Countries in French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>44</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLV1-QgpUU7N1lWv1Y4cLfWGBFS_r8qFr3" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>22</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCFE3216EBE33C84A" title="Learn French - French Vegetable Vocabulary"><img width="100px" src="https://i.ytimg.com/vi/VTj6Nlwurzg/mqdefault.jpg" alt="Learn French - French Vegetable Vocabulary"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCFE3216EBE33C84A" title="Learn French - French Vegetable Vocabulary">Learn French - French Vegetable Vocabulary</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>23</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLCFE3216EBE33C84A" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

@@ -1,0 +1,1628 @@
+  <html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script>  <title>Home</title>
+
+</head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nouvelles vidéos (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Nouvelles (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Débutants (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Écoute (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulaire (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En train de lire (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 L'écriture (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Prononciation (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlant (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Examens (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Chansons françaises (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Films français (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Français pour les enfants (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Etudier en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vie en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Nombres (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Achats (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Aliments (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Emplois (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Santé (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Regardé (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Nouvelles (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Etudier en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vie en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Regardé (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 L'écriture (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En train de lire (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Examens (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Chansons françaises (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Débutants (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlant (6)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Aliments (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Films français (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nouvelles vidéos (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Écoute (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulaire (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Français pour les enfants (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Nombres (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Emplois (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Santé (8)</a></div>
+</div>
+<br/>
+<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(0)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(6)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(8)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(11)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(8)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(5)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(3)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(7)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(6)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(5)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(5)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(9)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(0)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 paris L(0)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(8)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(6)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(10)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(8)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 2769 Videos<br/>Số lượng Videos trong DB: 130 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Home</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>CategoryID</th>
+      <th>ListVideo count</th>
+      <th>Add More List to this Category</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+	  <th>CategoryID</th>
+      <th>ListVideo count</th>
+      <th>Add More List to this Category</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>151</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLZNV0gmRjgU_a1snwPuqik7puw6ygEUej" title="Learn French with Vincent - Unit 1 - Lesson A : Les voyelles"><img width="100px" src="https://i.ytimg.com/vi/ugT3rlMHLRo/mqdefault.jpg" alt="Learn French with Vincent - Unit 1 - Lesson A : Les voyelles"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLZNV0gmRjgU_a1snwPuqik7puw6ygEUej" title="Learn French with Vincent - Unit 1 - Lesson A : Les voyelles">Learn French with Vincent - Unit 1 - Lesson A : Les voyelles</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>14</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLZNV0gmRjgU_a1snwPuqik7puw6ygEUej" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>150</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL458337A0067E476F" title="My Grade 9 French Class"><img width="100px" src="https://i.ytimg.com/vi/I5AZxYskVmg/mqdefault.jpg" alt="My Grade 9 French Class"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL458337A0067E476F" title="My Grade 9 French Class">My Grade 9 French Class</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>47</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL458337A0067E476F" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>148</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgy5DRV6RifSuQUd4dpM0GDQ-p9_w3c44" title="Expressing Emotions and Feelings (Moods) in French with Examples"><img width="100px" src="https://i.ytimg.com/vi/LkrZjR1xnhs/mqdefault.jpg" alt="Expressing Emotions and Feelings (Moods) in French with Examples"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLgy5DRV6RifSuQUd4dpM0GDQ-p9_w3c44" title="Expressing Emotions and Feelings (Moods) in French with Examples">Expressing Emotions and Feelings (Moods) in French with Examples</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>25</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLgy5DRV6RifSuQUd4dpM0GDQ-p9_w3c44" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>143</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLcoQWyFpRIxjqHAr-WgPu6C0whuKH8tk7" title="Arrête de Commettre ces 5 Erreurs en Français (2)"><img width="100px" src="https://i.ytimg.com/vi/7PLY1Fnu0G0/mqdefault.jpg" alt="Arrête de Commettre ces 5 Erreurs en Français (2)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLcoQWyFpRIxjqHAr-WgPu6C0whuKH8tk7" title="Arrête de Commettre ces 5 Erreurs en Français (2)">Arrête de Commettre ces 5 Erreurs en Français (2)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>46</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLcoQWyFpRIxjqHAr-WgPu6C0whuKH8tk7" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>141</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLMCkZGP4S1qXb0nlt1NQUiloVUz5WaZbV" title="LIDÉOLOGIE MONDIALISTE"><img width="100px" src="https://i.ytimg.com/vi/G3Y6Gbb6YQ4/mqdefault.jpg" alt="LIDÉOLOGIE MONDIALISTE"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLMCkZGP4S1qXb0nlt1NQUiloVUz5WaZbV" title="LIDÉOLOGIE MONDIALISTE">LIDÉOLOGIE MONDIALISTE</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>47</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLMCkZGP4S1qXb0nlt1NQUiloVUz5WaZbV" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>139</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLobUjaV3kYjO18yeBN-4VDm8CzU9G_a81" title="Maître Gims - Tout donner (pilule violette) (Audio)"><img width="100px" src="https://i.ytimg.com/vi/VjnoICSLoLs/mqdefault.jpg" alt="Maître Gims - Tout donner (pilule violette) (Audio)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLobUjaV3kYjO18yeBN-4VDm8CzU9G_a81" title="Maître Gims - Tout donner (pilule violette) (Audio)">Maître Gims - Tout donner (pilule violette) (Audio)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>32</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLobUjaV3kYjO18yeBN-4VDm8CzU9G_a81" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>138</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLi6RlXmkE5sjHSDSDTI5DpI9v8xX4GFwD" title="Dormir (to sleep) — French verb conjugated in the present tense"><img width="100px" src="https://i.ytimg.com/vi/gtL3uiFXKEA/mqdefault.jpg" alt="Dormir (to sleep) — French verb conjugated in the present tense"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLi6RlXmkE5sjHSDSDTI5DpI9v8xX4GFwD" title="Dormir (to sleep) — French verb conjugated in the present tense">Dormir (to sleep) — French verb conjugated in the present tense</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLi6RlXmkE5sjHSDSDTI5DpI9v8xX4GFwD" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>136</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLP4rLe2TC8aj6LsqToMmEvcD4vWLYeIF4" title="Mes fournitures scolaires 2k17"><img width="100px" src="https://i.ytimg.com/vi/F7DWRXJVY54/mqdefault.jpg" alt="Mes fournitures scolaires 2k17"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLP4rLe2TC8aj6LsqToMmEvcD4vWLYeIF4" title="Mes fournitures scolaires 2k17">Mes fournitures scolaires 2k17</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=1" title="see 1">1</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=1" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLP4rLe2TC8aj6LsqToMmEvcD4vWLYeIF4" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>135</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNwC5uWqMMk5BURgumOBRpgvzZZn52erH" title="♩♫ Musique Émotionnelle et Incroyable ♪♬ - Le Dernier Jour (Musique Libre de Droit)"><img width="100px" src="https://i.ytimg.com/vi/rd7kgpF0Y5k/mqdefault.jpg" alt="♩♫ Musique Émotionnelle et Incroyable ♪♬ - Le Dernier Jour (Musique Libre de Droit)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNwC5uWqMMk5BURgumOBRpgvzZZn52erH" title="♩♫ Musique Émotionnelle et Incroyable ♪♬ - Le Dernier Jour (Musique Libre de Droit)">♩♫ Musique Émotionnelle et Incroyable ♪♬ - Le Dernier Jour (Musique Libre de Droit)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=1" title="see 1">1</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=1" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLNwC5uWqMMk5BURgumOBRpgvzZZn52erH" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>134</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLW1D29VIaBLgpLs9OA57U_VtnTbWJOCX2" title="Caillou en Français | La Danse du Poulet de Caillou | dessin animé en entier | NOUVEAU 2018"><img width="100px" src="https://i.ytimg.com/vi/JmTTkYRAT0M/mqdefault.jpg" alt="Caillou en Français | La Danse du Poulet de Caillou | dessin animé en entier | NOUVEAU 2018"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLW1D29VIaBLgpLs9OA57U_VtnTbWJOCX2" title="Caillou en Français | La Danse du Poulet de Caillou | dessin animé en entier | NOUVEAU 2018">Caillou en Français | La Danse du Poulet de Caillou | dessin animé en entier | NOUVEAU 2018</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=1" title="see 1">1</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=1" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLW1D29VIaBLgpLs9OA57U_VtnTbWJOCX2" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>132</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCK_Q9E9zzAmzmDCCO5KgTgXdb5bOHbMP" title="Catboy Pj mask How to draw and coloring fun new Hd video for kids"><img width="100px" src="https://i.ytimg.com/vi/gU8fnQp7Uyo/mqdefault.jpg" alt="Catboy Pj mask How to draw and coloring fun new Hd video for kids"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCK_Q9E9zzAmzmDCCO5KgTgXdb5bOHbMP" title="Catboy Pj mask How to draw and coloring fun new Hd video for kids">Catboy Pj mask How to draw and coloring fun new Hd video for kids</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=1" title="see 1">1</a></td>
+	  <td>11</td>
+      <td><a target="_blank" href="youtube/?CategoryID=1" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLCK_Q9E9zzAmzmDCCO5KgTgXdb5bOHbMP" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>131</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL6dluvpbiaZt5diPpaJdDBHqLMuuJGNCy" title="ETIENNE LE DANGEREUX"><img width="100px" src="https://i.ytimg.com/vi/L9MuWFRnvK0/mqdefault.jpg" alt="ETIENNE LE DANGEREUX"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL6dluvpbiaZt5diPpaJdDBHqLMuuJGNCy" title="ETIENNE LE DANGEREUX">ETIENNE LE DANGEREUX</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=1" title="see 1">1</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=1" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL6dluvpbiaZt5diPpaJdDBHqLMuuJGNCy" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>130</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLn4zT-06U9FUrZmdiXHm9AyJSdcM6cdxp" title="Camila Cabello - Never Be the Same"><img width="100px" src="https://i.ytimg.com/vi/Ph54wQG8ynk/mqdefault.jpg" alt="Camila Cabello - Never Be the Same"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLn4zT-06U9FUrZmdiXHm9AyJSdcM6cdxp" title="Camila Cabello - Never Be the Same">Camila Cabello - Never Be the Same</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=1" title="see 1">1</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=1" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLn4zT-06U9FUrZmdiXHm9AyJSdcM6cdxp" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>129</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLS23ufnYNqQPE8Q07QQJOso0y4pKQHndv" title="Les Super Nanas | Laffaire Robogenda | Cartoon Network"><img width="100px" src="https://i.ytimg.com/vi/3BBxsnLeuSk/mqdefault.jpg" alt="Les Super Nanas | Laffaire Robogenda | Cartoon Network"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLS23ufnYNqQPE8Q07QQJOso0y4pKQHndv" title="Les Super Nanas | Laffaire Robogenda | Cartoon Network">Les Super Nanas | Laffaire Robogenda | Cartoon Network</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=1" title="see 1">1</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=1" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLS23ufnYNqQPE8Q07QQJOso0y4pKQHndv" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>127</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLBnUjboTGmKR_UNqsqBlpkw_07TpP_P1U" title="Sam le Pompier francais | Sam est en danger - Épisode complet | Dessin Animé"><img width="100px" src="https://i.ytimg.com/vi/rJrKe-X6E4Q/mqdefault.jpg" alt="Sam le Pompier francais | Sam est en danger - Épisode complet | Dessin Animé"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLBnUjboTGmKR_UNqsqBlpkw_07TpP_P1U" title="Sam le Pompier francais | Sam est en danger - Épisode complet | Dessin Animé">Sam le Pompier francais | Sam est en danger - Épisode complet | Dessin Animé</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=1" title="see 1">1</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=1" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLBnUjboTGmKR_UNqsqBlpkw_07TpP_P1U" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>126</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpGjXOTB3il2bdRvIwkU2XCi7rg7jlWZm" title="Comment fonctionne notre système de santé ?"><img width="100px" src="https://i.ytimg.com/vi/CcoVokM7wE0/mqdefault.jpg" alt="Comment fonctionne notre système de santé ?"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpGjXOTB3il2bdRvIwkU2XCi7rg7jlWZm" title="Comment fonctionne notre système de santé ?">Comment fonctionne notre système de santé ?</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>33</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLpGjXOTB3il2bdRvIwkU2XCi7rg7jlWZm" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>125</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLAbwgZsEhpxNqta64_Pq1ooJRs6OxwSXj" title="Le remboursement des frais de santé par lassureur, comment ça marche ?"><img width="100px" src="https://i.ytimg.com/vi/Op06nbWb79A/mqdefault.jpg" alt="Le remboursement des frais de santé par lassureur, comment ça marche ?"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLAbwgZsEhpxNqta64_Pq1ooJRs6OxwSXj" title="Le remboursement des frais de santé par lassureur, comment ça marche ?">Le remboursement des frais de santé par lassureur, comment ça marche ?</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>17</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLAbwgZsEhpxNqta64_Pq1ooJRs6OxwSXj" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>124</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLB_14yRKPUvyPScihqX5jQ2TaGjisWLDE" title="Cellule de crise - Mali quand la France entre en guerre Saison 3 Episode 5 : Santé : la loi du marché Longtemps érigé en modèle, le système de santé"><img width="100px" src="https://i.ytimg.com/vi/W7EW0qC5cw0/mqdefault.jpg" alt="Cellule de crise - Mali quand la France entre en guerre Saison 3 Episode 5 : Santé : la loi du marché Longtemps érigé en modèle, le système de santé"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLB_14yRKPUvyPScihqX5jQ2TaGjisWLDE" title="Cellule de crise - Mali quand la France entre en guerre Saison 3 Episode 5 : Santé : la loi du marché Longtemps érigé en modèle, le système de santé">Cellule de crise - Mali quand la France entre en guerre Saison 3 Episode 5 : Santé : la loi du marché Longtemps érigé en modèle, le système de santé</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLB_14yRKPUvyPScihqX5jQ2TaGjisWLDE" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>123</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLfsbXOG1kintI1KAhy6ATQCfDN8dADocX" title="Comment votre oreiller peut détruire votre santé - France 365"><img width="100px" src="https://i.ytimg.com/vi/0xJxiM7fPxA/mqdefault.jpg" alt="Comment votre oreiller peut détruire votre santé - France 365"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLfsbXOG1kintI1KAhy6ATQCfDN8dADocX" title="Comment votre oreiller peut détruire votre santé - France 365">Comment votre oreiller peut détruire votre santé - France 365</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>48</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLfsbXOG1kintI1KAhy6ATQCfDN8dADocX" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>122</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwKmKLExy7kbS3eudwksEBvWldhjXEX-B" title="La grève des médecins expliquée ! Stop à la manipulation politique !"><img width="100px" src="https://i.ytimg.com/vi/hgkerl9tIfk/mqdefault.jpg" alt="La grève des médecins expliquée ! Stop à la manipulation politique !"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwKmKLExy7kbS3eudwksEBvWldhjXEX-B" title="La grève des médecins expliquée ! Stop à la manipulation politique !">La grève des médecins expliquée ! Stop à la manipulation politique !</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLwKmKLExy7kbS3eudwksEBvWldhjXEX-B" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>121</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwXX50OxY30KG1ZB77GgRRQXzuGWuFuEg" title="Ma Carte Vitale, elle sert à quoi ?"><img width="100px" src="https://i.ytimg.com/vi/ml2K8xfgLhE/mqdefault.jpg" alt="Ma Carte Vitale, elle sert à quoi ?"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwXX50OxY30KG1ZB77GgRRQXzuGWuFuEg" title="Ma Carte Vitale, elle sert à quoi ?">Ma Carte Vitale, elle sert à quoi ?</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLwXX50OxY30KG1ZB77GgRRQXzuGWuFuEg" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>120</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLZ4eZaeDzuu9dnil8Z0W3LRefG5ZsxYG9" title="MOOC : Comprendre la santé publique et le système de santé"><img width="100px" src="https://i.ytimg.com/vi/2o5n2FSshlM/mqdefault.jpg" alt="MOOC : Comprendre la santé publique et le système de santé"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLZ4eZaeDzuu9dnil8Z0W3LRefG5ZsxYG9" title="MOOC : Comprendre la santé publique et le système de santé">MOOC : Comprendre la santé publique et le système de santé</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>2</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLZ4eZaeDzuu9dnil8Z0W3LRefG5ZsxYG9" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>119</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLXPu2pId-3LIi3n5_PQVWa5buhiOdxt_G" title="Comment fonctionne notre système de santé ?"><img width="100px" src="https://i.ytimg.com/vi/CcoVokM7wE0/mqdefault.jpg" alt="Comment fonctionne notre système de santé ?"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLXPu2pId-3LIi3n5_PQVWa5buhiOdxt_G" title="Comment fonctionne notre système de santé ?">Comment fonctionne notre système de santé ?</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=22" title="see 22">22</a></td>
+	  <td>1</td>
+      <td><a target="_blank" href="youtube/?CategoryID=22" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLXPu2pId-3LIi3n5_PQVWa5buhiOdxt_G" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>118</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLXSKT-6zOKzyLi1kL4JEMZsbbyeHTEptH" title="Euro PLV recrute 30 personnes dans le secteur de limprimerie"><img width="100px" src="https://i.ytimg.com/vi/BiLd-kkvpF0/mqdefault.jpg" alt="Euro PLV recrute 30 personnes dans le secteur de limprimerie"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLXSKT-6zOKzyLi1kL4JEMZsbbyeHTEptH" title="Euro PLV recrute 30 personnes dans le secteur de limprimerie">Euro PLV recrute 30 personnes dans le secteur de limprimerie</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>39</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLXSKT-6zOKzyLi1kL4JEMZsbbyeHTEptH" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>117</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLklSVx-wXAHLFMSJ-af-xPTKjn20RabSC" title="Les Emplois en Seine 2017"><img width="100px" src="https://i.ytimg.com/vi/SzIJeM1o61U/mqdefault.jpg" alt="Les Emplois en Seine 2017"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLklSVx-wXAHLFMSJ-af-xPTKjn20RabSC" title="Les Emplois en Seine 2017">Les Emplois en Seine 2017</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>11</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLklSVx-wXAHLFMSJ-af-xPTKjn20RabSC" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>116</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL32A769D7888F1CC2" title="Renault Slovénie va supprimer 2.200 emplois"><img width="100px" src="https://i.ytimg.com/vi/FUA875xUVgI/mqdefault.jpg" alt="Renault Slovénie va supprimer 2.200 emplois"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL32A769D7888F1CC2" title="Renault Slovénie va supprimer 2.200 emplois">Renault Slovénie va supprimer 2.200 emplois</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>39</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL32A769D7888F1CC2" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>115</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpm2evF1qaJeQhNk-Erg4Q_76gNBH-t08" title="Vidéo témoignages des étudiants yéménites boursiers de la Fondation Hadhramout"><img width="100px" src="https://i.ytimg.com/vi/U_Z4N30NsRo/mqdefault.jpg" alt="Vidéo témoignages des étudiants yéménites boursiers de la Fondation Hadhramout"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpm2evF1qaJeQhNk-Erg4Q_76gNBH-t08" title="Vidéo témoignages des étudiants yéménites boursiers de la Fondation Hadhramout">Vidéo témoignages des étudiants yéménites boursiers de la Fondation Hadhramout</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>25</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLpm2evF1qaJeQhNk-Erg4Q_76gNBH-t08" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>114</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLWDDGkeS5XYG2gQUkZroDlAP_NmfnESs2" title="Prospective des Métiers et Qualifications (PMQ) : bilan et perspectives"><img width="100px" src="https://i.ytimg.com/vi/E1zAXFY0-QM/mqdefault.jpg" alt="Prospective des Métiers et Qualifications (PMQ) : bilan et perspectives"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLWDDGkeS5XYG2gQUkZroDlAP_NmfnESs2" title="Prospective des Métiers et Qualifications (PMQ) : bilan et perspectives">Prospective des Métiers et Qualifications (PMQ) : bilan et perspectives</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLWDDGkeS5XYG2gQUkZroDlAP_NmfnESs2" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>113</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLagfomMNRgnXIpy28iA81_5OCbU5sHve5" title="Emploi : lOPAC de lOise recrute des gardiens dimmeubles."><img width="100px" src="https://i.ytimg.com/vi/T63ZwkClvJ0/mqdefault.jpg" alt="Emploi : lOPAC de lOise recrute des gardiens dimmeubles."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLagfomMNRgnXIpy28iA81_5OCbU5sHve5" title="Emploi : lOPAC de lOise recrute des gardiens dimmeubles.">Emploi : lOPAC de lOise recrute des gardiens dimmeubles.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>49</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLagfomMNRgnXIpy28iA81_5OCbU5sHve5" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>112</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8hP2MDWYfPwmmDZlkry_q3xecs0efz0s" title="Steve Jobs Stanford Francais - Vostfr"><img width="100px" src="https://i.ytimg.com/vi/PL93J3ojc3M/mqdefault.jpg" alt="Steve Jobs Stanford Francais - Vostfr"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8hP2MDWYfPwmmDZlkry_q3xecs0efz0s" title="Steve Jobs Stanford Francais - Vostfr">Steve Jobs Stanford Francais - Vostfr</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8hP2MDWYfPwmmDZlkry_q3xecs0efz0s" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>111</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLnPMwrwmtnEKUXJwSdmSMZqK_DBcUxMYn" title="10 MEILLEURS CONSEILS POUR TROUVER UN JOB DETE !"><img width="100px" src="https://i.ytimg.com/vi/tu0IRN7LAJ4/mqdefault.jpg" alt="10 MEILLEURS CONSEILS POUR TROUVER UN JOB DETE !"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLnPMwrwmtnEKUXJwSdmSMZqK_DBcUxMYn" title="10 MEILLEURS CONSEILS POUR TROUVER UN JOB DETE !">10 MEILLEURS CONSEILS POUR TROUVER UN JOB DETE !</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=21" title="see 21">21</a></td>
+	  <td>8</td>
+      <td><a target="_blank" href="youtube/?CategoryID=21" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLnPMwrwmtnEKUXJwSdmSMZqK_DBcUxMYn" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>110</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL0KT5ELFpYRPSIYDbnzqBAvBW-Z6tiW4N" title="Comment faire la crêpe complète bretonne"><img width="100px" src="https://i.ytimg.com/vi/X4lh-TNVams/mqdefault.jpg" alt="Comment faire la crêpe complète bretonne"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL0KT5ELFpYRPSIYDbnzqBAvBW-Z6tiW4N" title="Comment faire la crêpe complète bretonne">Comment faire la crêpe complète bretonne</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL0KT5ELFpYRPSIYDbnzqBAvBW-Z6tiW4N" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>109</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxSerSIVE4P7tGXzk4WnZ_b1_cnht6owO" title="Recette facile de la tarte au citron meringuée (US subtitles - lemon pie)"><img width="100px" src="https://i.ytimg.com/vi/hUWK5YMUEtQ/mqdefault.jpg" alt="Recette facile de la tarte au citron meringuée (US subtitles - lemon pie)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxSerSIVE4P7tGXzk4WnZ_b1_cnht6owO" title="Recette facile de la tarte au citron meringuée (US subtitles - lemon pie)">Recette facile de la tarte au citron meringuée (US subtitles - lemon pie)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>18</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLxSerSIVE4P7tGXzk4WnZ_b1_cnht6owO" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>108</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL1wmTsXn73F2-7vfWATIgSnp3AGHcsxzx" title="Potimarron garni de lentilles et de truite fumée"><img width="100px" src="https://i.ytimg.com/vi/haOvL3CX2Xw/mqdefault.jpg" alt="Potimarron garni de lentilles et de truite fumée"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL1wmTsXn73F2-7vfWATIgSnp3AGHcsxzx" title="Potimarron garni de lentilles et de truite fumée">Potimarron garni de lentilles et de truite fumée</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>11</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL1wmTsXn73F2-7vfWATIgSnp3AGHcsxzx" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>107</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLHplDq8v-sYEnk0urH3jX2dNDaeKt48oB" title="Paris Brest rapide et facile"><img width="100px" src="https://i.ytimg.com/vi/5yxQx3nlg8g/mqdefault.jpg" alt="Paris Brest rapide et facile"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLHplDq8v-sYEnk0urH3jX2dNDaeKt48oB" title="Paris Brest rapide et facile">Paris Brest rapide et facile</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>8</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLHplDq8v-sYEnk0urH3jX2dNDaeKt48oB" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>106</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLt9KJ5c0z8-Wqua1QSTSBstw0jSw7y-Pi" title="Boomerang : les dessous de la barre chocolaté"><img width="100px" src="https://i.ytimg.com/vi/A6uKKP6zQ6E/mqdefault.jpg" alt="Boomerang : les dessous de la barre chocolaté"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLt9KJ5c0z8-Wqua1QSTSBstw0jSw7y-Pi" title="Boomerang : les dessous de la barre chocolaté">Boomerang : les dessous de la barre chocolaté</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>37</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLt9KJ5c0z8-Wqua1QSTSBstw0jSw7y-Pi" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>105</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLGnaeQ6ytPsgcKxl0g0UUDglL5NNmY-AJ" title="Les habitudes du matin des Parisiens"><img width="100px" src="https://i.ytimg.com/vi/SGWqFbzIAWs/mqdefault.jpg" alt="Les habitudes du matin des Parisiens"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLGnaeQ6ytPsgcKxl0g0UUDglL5NNmY-AJ" title="Les habitudes du matin des Parisiens">Les habitudes du matin des Parisiens</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>14</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLGnaeQ6ytPsgcKxl0g0UUDglL5NNmY-AJ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>104</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLd6hpRMH5jl0chwe6IELOYkoa7iwHr3Rt" title="Les mystères de loeuf (France 5)"><img width="100px" src="https://i.ytimg.com/vi/q057wrwd0nA/mqdefault.jpg" alt="Les mystères de loeuf (France 5)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLd6hpRMH5jl0chwe6IELOYkoa7iwHr3Rt" title="Les mystères de loeuf (France 5)">Les mystères de loeuf (France 5)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLd6hpRMH5jl0chwe6IELOYkoa7iwHr3Rt" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>103</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLnMpcNtFE-LA75y4Vfiw6MC4Il9h61FVG" title="Produit du jour : le radis"><img width="100px" src="https://i.ytimg.com/vi/-Facf4gS0LU/mqdefault.jpg" alt="Produit du jour : le radis"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLnMpcNtFE-LA75y4Vfiw6MC4Il9h61FVG" title="Produit du jour : le radis">Produit du jour : le radis</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>7</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLnMpcNtFE-LA75y4Vfiw6MC4Il9h61FVG" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>102</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL298C6CD96FFC430A" title="Gastronomie - Gérard Depardieu, vigneron"><img width="100px" src="https://i.ytimg.com/vi/G-yJpUfF-eE/mqdefault.jpg" alt="Gastronomie - Gérard Depardieu, vigneron"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL298C6CD96FFC430A" title="Gastronomie - Gérard Depardieu, vigneron">Gastronomie - Gérard Depardieu, vigneron</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>25</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL298C6CD96FFC430A" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>101</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLSAl-n3Cc1iOfBFS0ZPwtLpkVluwxz6ze" title="Recettes pour apprendre le français : La salade de pastèques"><img width="100px" src="https://i.ytimg.com/vi/rU43JMNGUIM/mqdefault.jpg" alt="Recettes pour apprendre le français : La salade de pastèques"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLSAl-n3Cc1iOfBFS0ZPwtLpkVluwxz6ze" title="Recettes pour apprendre le français : La salade de pastèques">Recettes pour apprendre le français : La salade de pastèques</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=20" title="see 20">20</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=20" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLSAl-n3Cc1iOfBFS0ZPwtLpkVluwxz6ze" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>100</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLRmJTjm8Yp_QGU_KRHlheaev_jQ1m_d1g" title="Cafe Music!!Jazz & Bossa Nova instrumental Music!!お部屋に明るい音楽を！！"><img width="100px" src="https://i.ytimg.com/vi/K2Q6YO3Ez44/mqdefault.jpg" alt="Cafe Music!!Jazz & Bossa Nova instrumental Music!!お部屋に明るい音楽を！！"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLRmJTjm8Yp_QGU_KRHlheaev_jQ1m_d1g" title="Cafe Music!!Jazz & Bossa Nova instrumental Music!!お部屋に明るい音楽を！！">Cafe Music!!Jazz & Bossa Nova instrumental Music!!お部屋に明るい音楽を！！</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>49</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLRmJTjm8Yp_QGU_KRHlheaev_jQ1m_d1g" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>99</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLy8VeumcDIzTG508UiicIWoO3bzsEmepb" title="Paris, France - Visite Guidée du Quartier du Marais (Partie 2)"><img width="100px" src="https://i.ytimg.com/vi/0VO5iLy0538/mqdefault.jpg" alt="Paris, France - Visite Guidée du Quartier du Marais (Partie 2)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLy8VeumcDIzTG508UiicIWoO3bzsEmepb" title="Paris, France - Visite Guidée du Quartier du Marais (Partie 2)">Paris, France - Visite Guidée du Quartier du Marais (Partie 2)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLy8VeumcDIzTG508UiicIWoO3bzsEmepb" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>98</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLmZxY7ygQv26UoQIKhLOy0kU4t0Zw3A0E" title="Sephora Haul (in Paris!)  |  Makeup Splurge on my Honeymoon"><img width="100px" src="https://i.ytimg.com/vi/xbkGUxsQ4fc/mqdefault.jpg" alt="Sephora Haul (in Paris!)  |  Makeup Splurge on my Honeymoon"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLmZxY7ygQv26UoQIKhLOy0kU4t0Zw3A0E" title="Sephora Haul (in Paris!)  |  Makeup Splurge on my Honeymoon">Sephora Haul (in Paris!)  |  Makeup Splurge on my Honeymoon</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>2</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLmZxY7ygQv26UoQIKhLOy0kU4t0Zw3A0E" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>97</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwZZAObZUkIBdvnsqRc1JZtZrT8s0wkq-" title="NORMAN - FAIRE LES COURSES"><img width="100px" src="https://i.ytimg.com/vi/vBYUpkCAF-M/mqdefault.jpg" alt="NORMAN - FAIRE LES COURSES"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwZZAObZUkIBdvnsqRc1JZtZrT8s0wkq-" title="NORMAN - FAIRE LES COURSES">NORMAN - FAIRE LES COURSES</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>25</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLwZZAObZUkIBdvnsqRc1JZtZrT8s0wkq-" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>96</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLKI92tb76wSk1GVE5QIOLjbVbzCWoDw2j" title="Vitrines de Noël 2014 : Printemps & Galeries Lafayette"><img width="100px" src="https://i.ytimg.com/vi/TK990ZHu9Bw/mqdefault.jpg" alt="Vitrines de Noël 2014 : Printemps & Galeries Lafayette"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLKI92tb76wSk1GVE5QIOLjbVbzCWoDw2j" title="Vitrines de Noël 2014 : Printemps & Galeries Lafayette">Vitrines de Noël 2014 : Printemps & Galeries Lafayette</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLKI92tb76wSk1GVE5QIOLjbVbzCWoDw2j" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>95</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL52C506A36CC25BEB" title="French Supermarket.avi"><img width="100px" src="https://i.ytimg.com/vi/jK88dMnpUxc/mqdefault.jpg" alt="French Supermarket.avi"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL52C506A36CC25BEB" title="French Supermarket.avi">French Supermarket.avi</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=19" title="see 19">19</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=19" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL52C506A36CC25BEB" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>94</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLbBePWwLspPYKul7T2rJHZ9FZuModlksK" title="Numbers 11 to 20 in French | Beginner French Lessons for Children"><img width="100px" src="https://i.ytimg.com/vi/iiJNzhHzQtQ/mqdefault.jpg" alt="Numbers 11 to 20 in French | Beginner French Lessons for Children"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLbBePWwLspPYKul7T2rJHZ9FZuModlksK" title="Numbers 11 to 20 in French | Beginner French Lessons for Children">Numbers 11 to 20 in French | Beginner French Lessons for Children</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>34</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLbBePWwLspPYKul7T2rJHZ9FZuModlksK" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>93</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLoNxDO8xoBXSR8EDF_Y9m7rJ_1iEglClZ" title="french numbers 1-10 for children"><img width="100px" src="https://i.ytimg.com/vi/IXkdFAXw-C8/mqdefault.jpg" alt="french numbers 1-10 for children"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLoNxDO8xoBXSR8EDF_Y9m7rJ_1iEglClZ" title="french numbers 1-10 for children">french numbers 1-10 for children</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>20</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLoNxDO8xoBXSR8EDF_Y9m7rJ_1iEglClZ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>92</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf5tSyGmYOSOUY-1sHcwkBb6F7-945Lcb" title="Number song 1-20 for children | Counting numbers | The Singing Walrus"><img width="100px" src="https://i.ytimg.com/vi/D0Ajq682yrA/mqdefault.jpg" alt="Number song 1-20 for children | Counting numbers | The Singing Walrus"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf5tSyGmYOSOUY-1sHcwkBb6F7-945Lcb" title="Number song 1-20 for children | Counting numbers | The Singing Walrus">Number song 1-20 for children | Counting numbers | The Singing Walrus</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLf5tSyGmYOSOUY-1sHcwkBb6F7-945Lcb" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>91</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLBRZQjWLNjpAsbgUjqyQfHzo6chtZrzUJ" title="French for kids, learn the numbers - Educational cartoons Zumbers - Flower"><img width="100px" src="https://i.ytimg.com/vi/1GYvgis4oh4/mqdefault.jpg" alt="French for kids, learn the numbers - Educational cartoons Zumbers - Flower"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLBRZQjWLNjpAsbgUjqyQfHzo6chtZrzUJ" title="French for kids, learn the numbers - Educational cartoons Zumbers - Flower">French for kids, learn the numbers - Educational cartoons Zumbers - Flower</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>7</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLBRZQjWLNjpAsbgUjqyQfHzo6chtZrzUJ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>90</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4JUTnMqz-takczQCIh2fQY-nVosGlFOO" title="Basic arithmetic: addition for infants and toddlers in French. Learn numbers #1"><img width="100px" src="https://i.ytimg.com/vi/7v1KiC5mwAM/mqdefault.jpg" alt="Basic arithmetic: addition for infants and toddlers in French. Learn numbers #1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL4JUTnMqz-takczQCIh2fQY-nVosGlFOO" title="Basic arithmetic: addition for infants and toddlers in French. Learn numbers #1">Basic arithmetic: addition for infants and toddlers in French. Learn numbers #1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL4JUTnMqz-takczQCIh2fQY-nVosGlFOO" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>89</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLndvlUaBKjIvOHbb3xhscwp1-p03m46fo" title="???? Are You Sleeping Brother John | Kids Songs | Nursery Rhymes and Baby songs from Dave and Ava ????"><img width="100px" src="https://i.ytimg.com/vi/mvbjhy11ECg/mqdefault.jpg" alt="???? Are You Sleeping Brother John | Kids Songs | Nursery Rhymes and Baby songs from Dave and Ava ????"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLndvlUaBKjIvOHbb3xhscwp1-p03m46fo" title="???? Are You Sleeping Brother John | Kids Songs | Nursery Rhymes and Baby songs from Dave and Ava ????">???? Are You Sleeping Brother John | Kids Songs | Nursery Rhymes and Baby songs from Dave and Ava ????</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>33</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLndvlUaBKjIvOHbb3xhscwp1-p03m46fo" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>88</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL0KfhhaTaOCAOM4UH_ERj1z2J7o-pTN5L" title="French for kids = Learn French numbers # From 0 to 100"><img width="100px" src="https://i.ytimg.com/vi/2m7MLQXzVf4/mqdefault.jpg" alt="French for kids = Learn French numbers # From 0 to 100"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL0KfhhaTaOCAOM4UH_ERj1z2J7o-pTN5L" title="French for kids = Learn French numbers # From 0 to 100">French for kids = Learn French numbers # From 0 to 100</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL0KfhhaTaOCAOM4UH_ERj1z2J7o-pTN5L" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>86</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLQ4xNpoKMLMAkDcHxElE-3ICo0A2AfM5L" title="Numbers 1-20 in French (Song)"><img width="100px" src="https://i.ytimg.com/vi/evDuqXTfhkA/mqdefault.jpg" alt="Numbers 1-20 in French (Song)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLQ4xNpoKMLMAkDcHxElE-3ICo0A2AfM5L" title="Numbers 1-20 in French (Song)">Numbers 1-20 in French (Song)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=18" title="see 18">18</a></td>
+	  <td>2</td>
+      <td><a target="_blank" href="youtube/?CategoryID=18" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLQ4xNpoKMLMAkDcHxElE-3ICo0A2AfM5L" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>84</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLu3YrY-DC8zlMnTTZ7aEWkiSnem4CW2wL" title="Learn Colors with Colors Hand, Teach Colours, Baby Children Kids Learning Videos by Baby Rhymes"><img width="100px" src="https://i.ytimg.com/vi/uVz8oYXid0o/mqdefault.jpg" alt="Learn Colors with Colors Hand, Teach Colours, Baby Children Kids Learning Videos by Baby Rhymes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLu3YrY-DC8zlMnTTZ7aEWkiSnem4CW2wL" title="Learn Colors with Colors Hand, Teach Colours, Baby Children Kids Learning Videos by Baby Rhymes">Learn Colors with Colors Hand, Teach Colours, Baby Children Kids Learning Videos by Baby Rhymes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>21</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLu3YrY-DC8zlMnTTZ7aEWkiSnem4CW2wL" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>83</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLw6L_NY6FuHEt5WfPFrS9rJUTLEeBUv5k" title="Farm animals name and sound - Kids Learning"><img width="100px" src="https://i.ytimg.com/vi/RVJbKPW3Crs/mqdefault.jpg" alt="Farm animals name and sound - Kids Learning"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLw6L_NY6FuHEt5WfPFrS9rJUTLEeBUv5k" title="Farm animals name and sound - Kids Learning">Farm animals name and sound - Kids Learning</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>18</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLw6L_NY6FuHEt5WfPFrS9rJUTLEeBUv5k" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>82</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLu3YrY-DC8znbWAA8GzTKIPf_imC0sTVs" title="Learn Colors with Colors Hand, Teach Colours, Baby Children Kids Learning Videos by Baby Rhymes"><img width="100px" src="https://i.ytimg.com/vi/uVz8oYXid0o/mqdefault.jpg" alt="Learn Colors with Colors Hand, Teach Colours, Baby Children Kids Learning Videos by Baby Rhymes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLu3YrY-DC8znbWAA8GzTKIPf_imC0sTVs" title="Learn Colors with Colors Hand, Teach Colours, Baby Children Kids Learning Videos by Baby Rhymes">Learn Colors with Colors Hand, Teach Colours, Baby Children Kids Learning Videos by Baby Rhymes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>0</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLu3YrY-DC8znbWAA8GzTKIPf_imC0sTVs" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>81</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLTLYK7ATSONLZa8dWNS-dNcT7GnHcckZX" title="French Greetings Song for Children"><img width="100px" src="https://i.ytimg.com/vi/NXkJ88ygPY0/mqdefault.jpg" alt="French Greetings Song for Children"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLTLYK7ATSONLZa8dWNS-dNcT7GnHcckZX" title="French Greetings Song for Children">French Greetings Song for Children</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>15</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLTLYK7ATSONLZa8dWNS-dNcT7GnHcckZX" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>80</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjrOEL6qTpBI8meqpQMet90GXjVp986WG" title="COLOURS IN FRENCH * Lesson 1 * Kids Learn Vocabulary App"><img width="100px" src="https://i.ytimg.com/vi/JsAwxiqYLWM/mqdefault.jpg" alt="COLOURS IN FRENCH * Lesson 1 * Kids Learn Vocabulary App"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjrOEL6qTpBI8meqpQMet90GXjVp986WG" title="COLOURS IN FRENCH * Lesson 1 * Kids Learn Vocabulary App">COLOURS IN FRENCH * Lesson 1 * Kids Learn Vocabulary App</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>8</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLjrOEL6qTpBI8meqpQMet90GXjVp986WG" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>79</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNlIL24JC6jAzTFEstwlcz-JDqUaOnfTf" title="Le petit chaperon rouge  - dessin animé en français - conte pour enfants"><img width="100px" src="https://i.ytimg.com/vi/o9OsRljQSbw/mqdefault.jpg" alt="Le petit chaperon rouge  - dessin animé en français - conte pour enfants"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLNlIL24JC6jAzTFEstwlcz-JDqUaOnfTf" title="Le petit chaperon rouge  - dessin animé en français - conte pour enfants">Le petit chaperon rouge  - dessin animé en français - conte pour enfants</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLNlIL24JC6jAzTFEstwlcz-JDqUaOnfTf" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>77</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLVG9GOCtsPrn9w-qMI3YS19aJ8b2aQxuE" title="Apprendre les fruits en samusant (français)"><img width="100px" src="https://i.ytimg.com/vi/VIv9F283Lo8/mqdefault.jpg" alt="Apprendre les fruits en samusant (français)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLVG9GOCtsPrn9w-qMI3YS19aJ8b2aQxuE" title="Apprendre les fruits en samusant (français)">Apprendre les fruits en samusant (français)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>34</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLVG9GOCtsPrn9w-qMI3YS19aJ8b2aQxuE" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>76</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLMtuxpU4MU-vyJEufkLNGU0iQRm2PaKWt" title="Learn French"><img width="100px" src="https://i.ytimg.com/vi/3bvDIbMaBsA/mqdefault.jpg" alt="Learn French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLMtuxpU4MU-vyJEufkLNGU0iQRm2PaKWt" title="Learn French">Learn French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=14" title="see 14">14</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=14" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLMtuxpU4MU-vyJEufkLNGU0iQRm2PaKWt" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>75</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="LEARN FRENCH - french lesson with Sherlock Holmes ( part 2 )"><img width="100px" src="https://i.ytimg.com/vi/3lYLWZbuVuw/mqdefault.jpg" alt="LEARN FRENCH - french lesson with Sherlock Holmes ( part 2 )"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="LEARN FRENCH - french lesson with Sherlock Holmes ( part 2 )">LEARN FRENCH - french lesson with Sherlock Holmes ( part 2 )</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>43</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>74</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLJs1WdZ-thsQVl2ZgpuqpZ41KwUKfEt2s" title="Lesson 1. French conversation with subtitles by your favorite film actors."><img width="100px" src="https://i.ytimg.com/vi/LINSi45lfyM/mqdefault.jpg" alt="Lesson 1. French conversation with subtitles by your favorite film actors."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLJs1WdZ-thsQVl2ZgpuqpZ41KwUKfEt2s" title="Lesson 1. French conversation with subtitles by your favorite film actors.">Lesson 1. French conversation with subtitles by your favorite film actors.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>20</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLJs1WdZ-thsQVl2ZgpuqpZ41KwUKfEt2s" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>73</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLC71B24087C142349" title="Learn French with toons - Les animaux Vol1"><img width="100px" src="https://i.ytimg.com/vi/KcOS1iLumwU/mqdefault.jpg" alt="Learn French with toons - Les animaux Vol1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLC71B24087C142349" title="Learn French with toons - Les animaux Vol1">Learn French with toons - Les animaux Vol1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLC71B24087C142349" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>71</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLGdmg6XrktJSZbSJCz1s9C2a0BkQ9IM_l" title="Les jours de la semaine"><img width="100px" src="https://i.ytimg.com/vi/FswiVDy2KK4/mqdefault.jpg" alt="Les jours de la semaine"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLGdmg6XrktJSZbSJCz1s9C2a0BkQ9IM_l" title="Les jours de la semaine">Les jours de la semaine</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>29</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLGdmg6XrktJSZbSJCz1s9C2a0BkQ9IM_l" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>70</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLrpuu3OIKtIv52x17z4uB88hdjxLGFniL" title="À la folie... pas du tout / He Loves Me,  He Loves Me Not -Movie"><img width="100px" src="https://i.ytimg.com/vi/QGUVAH30vE0/mqdefault.jpg" alt="À la folie... pas du tout / He Loves Me,  He Loves Me Not -Movie"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLrpuu3OIKtIv52x17z4uB88hdjxLGFniL" title="À la folie... pas du tout / He Loves Me,  He Loves Me Not -Movie">À la folie... pas du tout / He Loves Me,  He Loves Me Not -Movie</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>12</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLrpuu3OIKtIv52x17z4uB88hdjxLGFniL" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>69</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8aS91uAe39edrhLOfvQc_0Hxo8WDnMbH" title="LEARN FRENCH WITH MUSIC ( lyrics + translation )- Attention au départ"><img width="100px" src="https://i.ytimg.com/vi/AvT_ZGRY-Oc/mqdefault.jpg" alt="LEARN FRENCH WITH MUSIC ( lyrics + translation )- Attention au départ"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8aS91uAe39edrhLOfvQc_0Hxo8WDnMbH" title="LEARN FRENCH WITH MUSIC ( lyrics + translation )- Attention au départ">LEARN FRENCH WITH MUSIC ( lyrics + translation )- Attention au départ</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>19</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8aS91uAe39edrhLOfvQc_0Hxo8WDnMbH" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>68</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8aS91uAe39cjGqujmCtzwnK9RMgp-_3a" title="FRENCH LESSON ( speechless ) - learn easy vocabulary : KUNG FU PANDA"><img width="100px" src="https://i.ytimg.com/vi/cbshrjgUDlI/mqdefault.jpg" alt="FRENCH LESSON ( speechless ) - learn easy vocabulary : KUNG FU PANDA"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8aS91uAe39cjGqujmCtzwnK9RMgp-_3a" title="FRENCH LESSON ( speechless ) - learn easy vocabulary : KUNG FU PANDA">FRENCH LESSON ( speechless ) - learn easy vocabulary : KUNG FU PANDA</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>36</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8aS91uAe39cjGqujmCtzwnK9RMgp-_3a" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>67</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLrDNTU1QKdRK6v4XMbjp6RjPIHHdaWVSX" title="LOST CAUSE - full movie - comedy - in French with English Subtitles"><img width="100px" src="https://i.ytimg.com/vi/nQqW9DAdQVM/mqdefault.jpg" alt="LOST CAUSE - full movie - comedy - in French with English Subtitles"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLrDNTU1QKdRK6v4XMbjp6RjPIHHdaWVSX" title="LOST CAUSE - full movie - comedy - in French with English Subtitles">LOST CAUSE - full movie - comedy - in French with English Subtitles</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>11</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLrDNTU1QKdRK6v4XMbjp6RjPIHHdaWVSX" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>66</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Learn french with french movies : Yamakasi part1"><img width="100px" src="https://i.ytimg.com/vi/aEmfUjEpMs0/mqdefault.jpg" alt="Learn french with french movies : Yamakasi part1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Learn french with french movies : Yamakasi part1">Learn french with french movies : Yamakasi part1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=13" title="see 13">13</a></td>
+	  <td>38</td>
+      <td><a target="_blank" href="youtube/?CategoryID=13" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>65</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL3775B9A05B55B07E" title="Le robot dans mon château"><img width="100px" src="https://i.ytimg.com/vi/mEBi4yooJUI/mqdefault.jpg" alt="Le robot dans mon château"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL3775B9A05B55B07E" title="Le robot dans mon château">Le robot dans mon château</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>39</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL3775B9A05B55B07E" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>64</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLlBlltNtETtRAyz5CbU2zZa1vbKUta3k5" title="Numbers Song in French. Une Chanson des Chiffres."><img width="100px" src="https://i.ytimg.com/vi/lsc3qLMaCu8/mqdefault.jpg" alt="Numbers Song in French. Une Chanson des Chiffres."></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLlBlltNtETtRAyz5CbU2zZa1vbKUta3k5" title="Numbers Song in French. Une Chanson des Chiffres.">Numbers Song in French. Une Chanson des Chiffres.</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLlBlltNtETtRAyz5CbU2zZa1vbKUta3k5" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>63</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqX7hHatk_zgdXMFKPYQ2515byV7WqC-w" title="Les jours de la semaine - alain le lait (French days of the week)"><img width="100px" src="https://i.ytimg.com/vi/Lpwf5N0rfVE/mqdefault.jpg" alt="Les jours de la semaine - alain le lait (French days of the week)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqX7hHatk_zgdXMFKPYQ2515byV7WqC-w" title="Les jours de la semaine - alain le lait (French days of the week)">Les jours de la semaine - alain le lait (French days of the week)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLqX7hHatk_zgdXMFKPYQ2515byV7WqC-w" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>62</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjtXMrM33AEfc2dmyswDOF-K70Yu89NjV" title="Learn French with Mireille Mathieu, A Blue Bayou; Paroles, Lyrics"><img width="100px" src="https://i.ytimg.com/vi/IAUwTp7Q-kc/mqdefault.jpg" alt="Learn French with Mireille Mathieu, A Blue Bayou; Paroles, Lyrics"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjtXMrM33AEfc2dmyswDOF-K70Yu89NjV" title="Learn French with Mireille Mathieu, A Blue Bayou; Paroles, Lyrics">Learn French with Mireille Mathieu, A Blue Bayou; Paroles, Lyrics</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>18</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLjtXMrM33AEfc2dmyswDOF-K70Yu89NjV" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>61</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf6VsyqsDv3OaVBm6XlHZU9T2lms500T6" title="In A World Of My Own (French) w/ subs and translation"><img width="100px" src="https://i.ytimg.com/vi/5SYk362saaw/mqdefault.jpg" alt="In A World Of My Own (French) w/ subs and translation"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLf6VsyqsDv3OaVBm6XlHZU9T2lms500T6" title="In A World Of My Own (French) w/ subs and translation">In A World Of My Own (French) w/ subs and translation</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=12" title="see 12">12</a></td>
+	  <td>44</td>
+      <td><a target="_blank" href="youtube/?CategoryID=12" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLf6VsyqsDv3OaVBm6XlHZU9T2lms500T6" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>58</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLDZWbETZaBSXaNTSWjNDq6qqhd9DDnp89" title="learn french Conversation- english 1 french 3"><img width="100px" src="https://i.ytimg.com/vi/FC8Yx5_HHRE/mqdefault.jpg" alt="learn french Conversation- english 1 french 3"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLDZWbETZaBSXaNTSWjNDq6qqhd9DDnp89" title="learn french Conversation- english 1 french 3">learn french Conversation- english 1 french 3</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLDZWbETZaBSXaNTSWjNDq6qqhd9DDnp89" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>57</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLe8u4vFskrBDQx-jb56t7ph36ig-o9uv-" title="Learn French Vocabulary | French Made Easy Vol. 1"><img width="100px" src="https://i.ytimg.com/vi/VAkHfoyph4c/mqdefault.jpg" alt="Learn French Vocabulary | French Made Easy Vol. 1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLe8u4vFskrBDQx-jb56t7ph36ig-o9uv-" title="Learn French Vocabulary | French Made Easy Vol. 1">Learn French Vocabulary | French Made Easy Vol. 1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=11" title="see 11">11</a></td>
+	  <td>15</td>
+      <td><a target="_blank" href="youtube/?CategoryID=11" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLe8u4vFskrBDQx-jb56t7ph36ig-o9uv-" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>56</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLaL9Tqp44UTKNGdxJ4WlEVVLzshB0SJHh" title="French Language Learn French Pronunciation How to Speak French for Beginners Lesson 1"><img width="100px" src="https://i.ytimg.com/vi/1OU781ljJYw/mqdefault.jpg" alt="French Language Learn French Pronunciation How to Speak French for Beginners Lesson 1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLaL9Tqp44UTKNGdxJ4WlEVVLzshB0SJHh" title="French Language Learn French Pronunciation How to Speak French for Beginners Lesson 1">French Language Learn French Pronunciation How to Speak French for Beginners Lesson 1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLaL9Tqp44UTKNGdxJ4WlEVVLzshB0SJHh" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>55</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLbODW-Ywtw05iMGLdEdyCL2CyUgTUerMs" title="French Music Recommendations - March 2018 Favourites"><img width="100px" src="https://i.ytimg.com/vi/Ru89czT_1og/mqdefault.jpg" alt="French Music Recommendations - March 2018 Favourites"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLbODW-Ywtw05iMGLdEdyCL2CyUgTUerMs" title="French Music Recommendations - March 2018 Favourites">French Music Recommendations - March 2018 Favourites</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLbODW-Ywtw05iMGLdEdyCL2CyUgTUerMs" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>54</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLI-Y0DIYtSjwEI2MrRYVhYQhc2qPPiYGs" title="Learn French Quebecois with Piper: Lesson 1"><img width="100px" src="https://i.ytimg.com/vi/gLUhw0cvZA0/mqdefault.jpg" alt="Learn French Quebecois with Piper: Lesson 1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLI-Y0DIYtSjwEI2MrRYVhYQhc2qPPiYGs" title="Learn French Quebecois with Piper: Lesson 1">Learn French Quebecois with Piper: Lesson 1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLI-Y0DIYtSjwEI2MrRYVhYQhc2qPPiYGs" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>53</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLG9B-38BksIVqmbdIVUOQxsS9AyFEpilq" title="Beginners French: First French Lesson 1.1 - Introductions - Learn to Speak French"><img width="100px" src="https://i.ytimg.com/vi/nxgKIdxwECw/mqdefault.jpg" alt="Beginners French: First French Lesson 1.1 - Introductions - Learn to Speak French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLG9B-38BksIVqmbdIVUOQxsS9AyFEpilq" title="Beginners French: First French Lesson 1.1 - Introductions - Learn to Speak French">Beginners French: First French Lesson 1.1 - Introductions - Learn to Speak French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>35</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLG9B-38BksIVqmbdIVUOQxsS9AyFEpilq" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>51</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLLALQuK1NDriXwQvWZAT1dTgYwdZqx6bx" title="How to Say Bad Words in French | French Lessons"><img width="100px" src="https://i.ytimg.com/vi/Zz54UlxWqTI/mqdefault.jpg" alt="How to Say Bad Words in French | French Lessons"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLLALQuK1NDriXwQvWZAT1dTgYwdZqx6bx" title="How to Say Bad Words in French | French Lessons">How to Say Bad Words in French | French Lessons</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>44</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLLALQuK1NDriXwQvWZAT1dTgYwdZqx6bx" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>50</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8400690676A95A6E" title="Learn French - French Lesson 1 -  Learn French Fast!"><img width="100px" src="https://i.ytimg.com/vi/aW0utoW2SEs/mqdefault.jpg" alt="Learn French - French Lesson 1 -  Learn French Fast!"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL8400690676A95A6E" title="Learn French - French Lesson 1 -  Learn French Fast!">Learn French - French Lesson 1 -  Learn French Fast!</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=10" title="see 10">10</a></td>
+	  <td>41</td>
+      <td><a target="_blank" href="youtube/?CategoryID=10" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL8400690676A95A6E" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>49</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqpzrpOz5rR6jISaUSwJG8W5R3POEI3qK" title="Learn French. Pronunciation : French Sounds (les sons du français)"><img width="100px" src="https://i.ytimg.com/vi/nhH51nv8k1Y/mqdefault.jpg" alt="Learn French. Pronunciation : French Sounds (les sons du français)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqpzrpOz5rR6jISaUSwJG8W5R3POEI3qK" title="Learn French. Pronunciation : French Sounds (les sons du français)">Learn French. Pronunciation : French Sounds (les sons du français)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>2</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLqpzrpOz5rR6jISaUSwJG8W5R3POEI3qK" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>48</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLR5TbyQ6eHdySvkHTeQgxhiFrXtug1qSX" title="French Pronunciation"><img width="100px" src="https://i.ytimg.com/vi/6b4CmtV2Js4/mqdefault.jpg" alt="French Pronunciation"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLR5TbyQ6eHdySvkHTeQgxhiFrXtug1qSX" title="French Pronunciation">French Pronunciation</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>12</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLR5TbyQ6eHdySvkHTeQgxhiFrXtug1qSX" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>47</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL5A04824071586BD5" title="Learn French Pronunciation tips"><img width="100px" src="https://i.ytimg.com/vi/H-K9G8GW1AU/mqdefault.jpg" alt="Learn French Pronunciation tips"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL5A04824071586BD5" title="Learn French Pronunciation tips">Learn French Pronunciation tips</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>28</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL5A04824071586BD5" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>46</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLBZcHkPESuK-2a6SHfP45aJSGp8a3dxwP" title="1.1 Introduction: The French Vowel System"><img width="100px" src="https://i.ytimg.com/vi/Cc_X4HoQoeU/mqdefault.jpg" alt="1.1 Introduction: The French Vowel System"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLBZcHkPESuK-2a6SHfP45aJSGp8a3dxwP" title="1.1 Introduction: The French Vowel System">1.1 Introduction: The French Vowel System</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>26</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLBZcHkPESuK-2a6SHfP45aJSGp8a3dxwP" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>45</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLTRZMcUXCWLXFgWmaCwUtwT8PG4aF1nS0" title="French pronunciation - Phonétique : les nasales - Free french lesson"><img width="100px" src="https://i.ytimg.com/vi/j_Qs75dfpko/mqdefault.jpg" alt="French pronunciation - Phonétique : les nasales - Free french lesson"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLTRZMcUXCWLXFgWmaCwUtwT8PG4aF1nS0" title="French pronunciation - Phonétique : les nasales - Free french lesson">French pronunciation - Phonétique : les nasales - Free french lesson</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLTRZMcUXCWLXFgWmaCwUtwT8PG4aF1nS0" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>43</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0W3tMIoHyYC0Q3hfGBb9Zdu" title="Top 5 French Mistakes to Avoid - Vowels part 1 - French Pronunciation"><img width="100px" src="https://i.ytimg.com/vi/MVI_TDGAfI4/mqdefault.jpg" alt="Top 5 French Mistakes to Avoid - Vowels part 1 - French Pronunciation"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0W3tMIoHyYC0Q3hfGBb9Zdu" title="Top 5 French Mistakes to Avoid - Vowels part 1 - French Pronunciation">Top 5 French Mistakes to Avoid - Vowels part 1 - French Pronunciation</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtJL6GKh6j0W3tMIoHyYC0Q3hfGBb9Zdu" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>42</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N15x-ehJgw2t7MPdcHCySo2" title="French accents - part 1 (French Essentials Lesson 17)"><img width="100px" src="https://i.ytimg.com/vi/7VOhQ2V4E14/mqdefault.jpg" alt="French accents - part 1 (French Essentials Lesson 17)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N15x-ehJgw2t7MPdcHCySo2" title="French accents - part 1 (French Essentials Lesson 17)">French accents - part 1 (French Essentials Lesson 17)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=9" title="see 9">9</a></td>
+	  <td>28</td>
+      <td><a target="_blank" href="youtube/?CategoryID=9" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLV1-QgpUU7N15x-ehJgw2t7MPdcHCySo2" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>41</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjULSdBF6OvRdE4C8mBmFLXrY9ENlU_bB" title="Ấu Trùng Tinh Nghịch Larva | Larva Terbaru Cartoon Movie Episode 2 | Phim Hoạt Hình Larva 2018"><img width="100px" src="https://i.ytimg.com/vi/qW8H4VJSuzU/mqdefault.jpg" alt="Ấu Trùng Tinh Nghịch Larva | Larva Terbaru Cartoon Movie Episode 2 | Phim Hoạt Hình Larva 2018"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjULSdBF6OvRdE4C8mBmFLXrY9ENlU_bB" title="Ấu Trùng Tinh Nghịch Larva | Larva Terbaru Cartoon Movie Episode 2 | Phim Hoạt Hình Larva 2018">Ấu Trùng Tinh Nghịch Larva | Larva Terbaru Cartoon Movie Episode 2 | Phim Hoạt Hình Larva 2018</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=0" title="see 0">0</a></td>
+	  <td>39</td>
+      <td><a target="_blank" href="youtube/?CategoryID=0" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLjULSdBF6OvRdE4C8mBmFLXrY9ENlU_bB" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>39</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLBPh1-rEbuqhqdZJNMtspsmCS0UNp_sBG" title="Learn French Numbers 20 to 30"><img width="100px" src="https://i.ytimg.com/vi/rcmRBPyZ8Ig/mqdefault.jpg" alt="Learn French Numbers 20 to 30"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLBPh1-rEbuqhqdZJNMtspsmCS0UNp_sBG" title="Learn French Numbers 20 to 30">Learn French Numbers 20 to 30</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=8" title="see 8">8</a></td>
+	  <td>29</td>
+      <td><a target="_blank" href="youtube/?CategoryID=8" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLBPh1-rEbuqhqdZJNMtspsmCS0UNp_sBG" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>38</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLDsJrHTAyYm5bMe6bHLb6-mbN7V3FyePj" title="French Lesson 63 - Learn French numbers 100 to 1000 - counting to 1000 - Los numeros en francés"><img width="100px" src="https://i.ytimg.com/vi/q9j12--Iblk/mqdefault.jpg" alt="French Lesson 63 - Learn French numbers 100 to 1000 - counting to 1000 - Los numeros en francés"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLDsJrHTAyYm5bMe6bHLb6-mbN7V3FyePj" title="French Lesson 63 - Learn French numbers 100 to 1000 - counting to 1000 - Los numeros en francés">French Lesson 63 - Learn French numbers 100 to 1000 - counting to 1000 - Los numeros en francés</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=8" title="see 8">8</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=8" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLDsJrHTAyYm5bMe6bHLb6-mbN7V3FyePj" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>37</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_34kvgUTdS8re0fZO6gfRFyB086VyZWD" title="LEARN FRENCH | HOW TO SAY HI AND BYE | FRENCH LESSONS #1"><img width="100px" src="https://i.ytimg.com/vi/z6_ybCDvGvg/mqdefault.jpg" alt="LEARN FRENCH | HOW TO SAY HI AND BYE | FRENCH LESSONS #1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_34kvgUTdS8re0fZO6gfRFyB086VyZWD" title="LEARN FRENCH | HOW TO SAY HI AND BYE | FRENCH LESSONS #1">LEARN FRENCH | HOW TO SAY HI AND BYE | FRENCH LESSONS #1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=8" title="see 8">8</a></td>
+	  <td>28</td>
+      <td><a target="_blank" href="youtube/?CategoryID=8" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL_34kvgUTdS8re0fZO6gfRFyB086VyZWD" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>35</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLth8nmwcojDvDevIKUM_DiUKOhiZ1dFQu" title="How to pronounce french words: la méthode syllabique"><img width="100px" src="https://i.ytimg.com/vi/_Wr6W7D2KSk/mqdefault.jpg" alt="How to pronounce french words: la méthode syllabique"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLth8nmwcojDvDevIKUM_DiUKOhiZ1dFQu" title="How to pronounce french words: la méthode syllabique">How to pronounce french words: la méthode syllabique</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>8</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLth8nmwcojDvDevIKUM_DiUKOhiZ1dFQu" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>34</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0V6f9_d3q-jN48tdPdTUplD" title="French Reading for Beginners - What is the Last Stop of this Train?"><img width="100px" src="https://i.ytimg.com/vi/Ayeo9DDoMVM/mqdefault.jpg" alt="French Reading for Beginners - What is the Last Stop of this Train?"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0V6f9_d3q-jN48tdPdTUplD" title="French Reading for Beginners - What is the Last Stop of this Train?">French Reading for Beginners - What is the Last Stop of this Train?</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtJL6GKh6j0V6f9_d3q-jN48tdPdTUplD" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>33</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0UpaGvDbUdzvKP1YsWNcEto" title="French Reading for Absolute Beginners - Buying a Train Ticket"><img width="100px" src="https://i.ytimg.com/vi/ufUsYmQVdOY/mqdefault.jpg" alt="French Reading for Absolute Beginners - Buying a Train Ticket"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0UpaGvDbUdzvKP1YsWNcEto" title="French Reading for Absolute Beginners - Buying a Train Ticket">French Reading for Absolute Beginners - Buying a Train Ticket</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtJL6GKh6j0UpaGvDbUdzvKP1YsWNcEto" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>32</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxHosrOQ9gEzpBYroYAgTxamnR2J1mPDC" title="Le Petit Poucet (extrait)"><img width="100px" src="https://i.ytimg.com/vi/DaVMMgzJQSs/mqdefault.jpg" alt="Le Petit Poucet (extrait)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxHosrOQ9gEzpBYroYAgTxamnR2J1mPDC" title="Le Petit Poucet (extrait)">Le Petit Poucet (extrait)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>49</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLxHosrOQ9gEzpBYroYAgTxamnR2J1mPDC" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>31</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL11CBE1CF06754974" title="Santas Christmas: Learn French with Subtitles - Story for Children BookBox.com"><img width="100px" src="https://i.ytimg.com/vi/_C4HkGi63Jw/mqdefault.jpg" alt="Santas Christmas: Learn French with Subtitles - Story for Children BookBox.com"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL11CBE1CF06754974" title="Santas Christmas: Learn French with Subtitles - Story for Children BookBox.com">Santas Christmas: Learn French with Subtitles - Story for Children BookBox.com</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=7" title="see 7">7</a></td>
+	  <td>23</td>
+      <td><a target="_blank" href="youtube/?CategoryID=7" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL11CBE1CF06754974" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>30</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLWHCV00OLMW9K0Jjth4ICYyGn2gh-Fpsv" title="Learn French vocabulary with songs (1/40), apprendre le vocabulaire anglais avec des chansons 1"><img width="100px" src="https://i.ytimg.com/vi/2dLthauGOQA/mqdefault.jpg" alt="Learn French vocabulary with songs (1/40), apprendre le vocabulaire anglais avec des chansons 1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLWHCV00OLMW9K0Jjth4ICYyGn2gh-Fpsv" title="Learn French vocabulary with songs (1/40), apprendre le vocabulaire anglais avec des chansons 1">Learn French vocabulary with songs (1/40), apprendre le vocabulaire anglais avec des chansons 1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>22</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLWHCV00OLMW9K0Jjth4ICYyGn2gh-Fpsv" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>29</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqpzrpOz5rR4VfyR9yOFJEAxSEJumJoeJ" title="Learn French - French Numbers"><img width="100px" src="https://i.ytimg.com/vi/UQI_ztvjzqM/mqdefault.jpg" alt="Learn French - French Numbers"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLqpzrpOz5rR4VfyR9yOFJEAxSEJumJoeJ" title="Learn French - French Numbers">Learn French - French Numbers</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLqpzrpOz5rR4VfyR9yOFJEAxSEJumJoeJ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>28</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwAIibk_eotbiiPhJmctnuajnKWw9ZJMH" title="learn French vocabulary | Adjectives Lesson | Describing Bad Feelings | Quantity Adjectives"><img width="100px" src="https://i.ytimg.com/vi/JLjMDHWV9oI/mqdefault.jpg" alt="learn French vocabulary | Adjectives Lesson | Describing Bad Feelings | Quantity Adjectives"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwAIibk_eotbiiPhJmctnuajnKWw9ZJMH" title="learn French vocabulary | Adjectives Lesson | Describing Bad Feelings | Quantity Adjectives">learn French vocabulary | Adjectives Lesson | Describing Bad Feelings | Quantity Adjectives</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>8</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLwAIibk_eotbiiPhJmctnuajnKWw9ZJMH" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>27</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtzy24HfZQfLQpk499LPR_Jzcjwo8DQB6" title="#Learn French #Vocabulary #Various situations #17 minutes"><img width="100px" src="https://i.ytimg.com/vi/2l8bnYF3TFQ/mqdefault.jpg" alt="#Learn French #Vocabulary #Various situations #17 minutes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtzy24HfZQfLQpk499LPR_Jzcjwo8DQB6" title="#Learn French #Vocabulary #Various situations #17 minutes">#Learn French #Vocabulary #Various situations #17 minutes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>45</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtzy24HfZQfLQpk499LPR_Jzcjwo8DQB6" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>26</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLp4gRI4VdKFAe_cgw62Z-lvTh6phga3Hk" title="Vocabulary Insects and Bugs in French"><img width="100px" src="https://i.ytimg.com/vi/6_pDeHeogpA/mqdefault.jpg" alt="Vocabulary Insects and Bugs in French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLp4gRI4VdKFAe_cgw62Z-lvTh6phga3Hk" title="Vocabulary Insects and Bugs in French">Vocabulary Insects and Bugs in French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>47</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLp4gRI4VdKFAe_cgw62Z-lvTh6phga3Hk" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>25</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N2EYCbecsQ6nDhw_6sJX5zq" title="Sweet Food in French (basic French vocabulary from Learn French With Alexa)"><img width="100px" src="https://i.ytimg.com/vi/ewOipmpGsmI/mqdefault.jpg" alt="Sweet Food in French (basic French vocabulary from Learn French With Alexa)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N2EYCbecsQ6nDhw_6sJX5zq" title="Sweet Food in French (basic French vocabulary from Learn French With Alexa)">Sweet Food in French (basic French vocabulary from Learn French With Alexa)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>0</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLV1-QgpUU7N2EYCbecsQ6nDhw_6sJX5zq" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>23</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N1lWv1Y4cLfWGBFS_r8qFr3" title="European Countries in French"><img width="100px" src="https://i.ytimg.com/vi/Exsc1Gw55m0/mqdefault.jpg" alt="European Countries in French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV1-QgpUU7N1lWv1Y4cLfWGBFS_r8qFr3" title="European Countries in French">European Countries in French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>44</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLV1-QgpUU7N1lWv1Y4cLfWGBFS_r8qFr3" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>22</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCFE3216EBE33C84A" title="Learn French - French Vegetable Vocabulary"><img width="100px" src="https://i.ytimg.com/vi/VTj6Nlwurzg/mqdefault.jpg" alt="Learn French - French Vegetable Vocabulary"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCFE3216EBE33C84A" title="Learn French - French Vegetable Vocabulary">Learn French - French Vegetable Vocabulary</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=6" title="see 6">6</a></td>
+	  <td>23</td>
+      <td><a target="_blank" href="youtube/?CategoryID=6" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLCFE3216EBE33C84A" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>21</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLevCL3U3msLm5FjfsHdr6MQpd9NNamJKz" title="French Future Tense"><img width="100px" src="https://i.ytimg.com/vi/aPDFznWi4AQ/mqdefault.jpg" alt="French Future Tense"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLevCL3U3msLm5FjfsHdr6MQpd9NNamJKz" title="French Future Tense">French Future Tense</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>21</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLevCL3U3msLm5FjfsHdr6MQpd9NNamJKz" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>20</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLEEFB18BED9CC467A" title="[HD] French grammar : Les verbes en er"><img width="100px" src="https://i.ytimg.com/vi/YZ8CuGpW2BE/mqdefault.jpg" alt="[HD] French grammar : Les verbes en er"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLEEFB18BED9CC467A" title="[HD] French grammar : Les verbes en er">[HD] French grammar : Les verbes en er</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>44</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLEEFB18BED9CC467A" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>19</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLDABF436D813A955D" title="[Learn French] [Conjugaison] 22 verbes"><img width="100px" src="https://i.ytimg.com/vi/oYBjs0m10v0/mqdefault.jpg" alt="[Learn French] [Conjugaison] 22 verbes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLDABF436D813A955D" title="[Learn French] [Conjugaison] 22 verbes">[Learn French] [Conjugaison] 22 verbes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>12</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLDABF436D813A955D" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>18</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLspzzyq1zEs8AIq-xQCzlQd0Vpwp4V870" title="Learn French with Stéphane : Lesson # 1 - French Personal Pronouns (beginner)"><img width="100px" src="https://i.ytimg.com/vi/e5n2wQGcfAg/mqdefault.jpg" alt="Learn French with Stéphane : Lesson # 1 - French Personal Pronouns (beginner)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLspzzyq1zEs8AIq-xQCzlQd0Vpwp4V870" title="Learn French with Stéphane : Lesson # 1 - French Personal Pronouns (beginner)">Learn French with Stéphane : Lesson # 1 - French Personal Pronouns (beginner)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>6</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLspzzyq1zEs8AIq-xQCzlQd0Vpwp4V870" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>17</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLR5TbyQ6eHdyVMOPSMHf_afu2p6z1_Ldb" title="Learn French - Demonstrative Adjectives - Les adjectifs démonstratifs"><img width="100px" src="https://i.ytimg.com/vi/0olztMU8BQU/mqdefault.jpg" alt="Learn French - Demonstrative Adjectives - Les adjectifs démonstratifs"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLR5TbyQ6eHdyVMOPSMHf_afu2p6z1_Ldb" title="Learn French - Demonstrative Adjectives - Les adjectifs démonstratifs">Learn French - Demonstrative Adjectives - Les adjectifs démonstratifs</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>25</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLR5TbyQ6eHdyVMOPSMHf_afu2p6z1_Ldb" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>16</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCNIUwVwVLHfP6diY7ftL9ugPpvERHgbw" title="Emphatic Pronouns In French - Free Online Learning French"><img width="100px" src="https://i.ytimg.com/vi/ak06d79G5j4/mqdefault.jpg" alt="Emphatic Pronouns In French - Free Online Learning French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLCNIUwVwVLHfP6diY7ftL9ugPpvERHgbw" title="Emphatic Pronouns In French - Free Online Learning French">Emphatic Pronouns In French - Free Online Learning French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLCNIUwVwVLHfP6diY7ftL9ugPpvERHgbw" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>15</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwdneiUarh9ri744b1eAqPnAIh_UGiQhc" title="French Possessive Adjectives"><img width="100px" src="https://i.ytimg.com/vi/F0y2udVJLSw/mqdefault.jpg" alt="French Possessive Adjectives"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLwdneiUarh9ri744b1eAqPnAIh_UGiQhc" title="French Possessive Adjectives">French Possessive Adjectives</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=5" title="see 5">5</a></td>
+	  <td>37</td>
+      <td><a target="_blank" href="youtube/?CategoryID=5" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLwdneiUarh9ri744b1eAqPnAIh_UGiQhc" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>14</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLN17Fgp32NAqpM2Rg5BuPxHtCXxRkXBH1" title="Présentation de la chaine Français avec Pierre"><img width="100px" src="https://i.ytimg.com/vi/2AI0TjkbYIc/mqdefault.jpg" alt="Présentation de la chaine Français avec Pierre"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLN17Fgp32NAqpM2Rg5BuPxHtCXxRkXBH1" title="Présentation de la chaine Français avec Pierre">Présentation de la chaine Français avec Pierre</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLN17Fgp32NAqpM2Rg5BuPxHtCXxRkXBH1" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpQBxpLO3f-IelkPNKoBOTxYwQDfchhNX" title="Learn French Pronunciation in 12 Minutes"><img width="100px" src="https://i.ytimg.com/vi/4PvBkp-4bmc/mqdefault.jpg" alt="Learn French Pronunciation in 12 Minutes"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLpQBxpLO3f-IelkPNKoBOTxYwQDfchhNX" title="Learn French Pronunciation in 12 Minutes">Learn French Pronunciation in 12 Minutes</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLpQBxpLO3f-IelkPNKoBOTxYwQDfchhNX" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>12</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtE3WPsOa0lb4dsAA8g_wvCB3JlPo7OYf" title="Learn French - How to Introduce Yourself in French"><img width="100px" src="https://i.ytimg.com/vi/_4N46dVx9nE/mqdefault.jpg" alt="Learn French - How to Introduce Yourself in French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtE3WPsOa0lb4dsAA8g_wvCB3JlPo7OYf" title="Learn French - How to Introduce Yourself in French">Learn French - How to Introduce Yourself in French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtE3WPsOa0lb4dsAA8g_wvCB3JlPo7OYf" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>11</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0UTjmp04Sy92L_VCdyizdAh" title="Learn French - French Listening Comprehension - At the Jewelry Store in France"><img width="100px" src="https://i.ytimg.com/vi/nW3_Qt9ssCs/mqdefault.jpg" alt="Learn French - French Listening Comprehension - At the Jewelry Store in France"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0UTjmp04Sy92L_VCdyizdAh" title="Learn French - French Listening Comprehension - At the Jewelry Store in France">Learn French - French Listening Comprehension - At the Jewelry Store in France</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>20</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtJL6GKh6j0UTjmp04Sy92L_VCdyizdAh" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>10</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxHosrOQ9gEwfSXMf66rywgr_7Vqf4wFO" title="Advanced French class"><img width="100px" src="https://i.ytimg.com/vi/eUBuIJuKptw/mqdefault.jpg" alt="Advanced French class"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxHosrOQ9gEwfSXMf66rywgr_7Vqf4wFO" title="Advanced French class">Advanced French class</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>41</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLxHosrOQ9gEwfSXMf66rywgr_7Vqf4wFO" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>9</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0X0fFVBERiwojQ5RnTXNEFL" title="Learn French - French Listening Comprehension - At a French Bookstore"><img width="100px" src="https://i.ytimg.com/vi/ZJug3VLV1Xw/mqdefault.jpg" alt="Learn French - French Listening Comprehension - At a French Bookstore"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0X0fFVBERiwojQ5RnTXNEFL" title="Learn French - French Listening Comprehension - At a French Bookstore">Learn French - French Listening Comprehension - At a French Bookstore</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>14</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtJL6GKh6j0X0fFVBERiwojQ5RnTXNEFL" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>8</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0W1GFbzc5ANZqtidjrLUAGJ" title="Learn French - French Listening Comprehension - Looking At Apartments in France"><img width="100px" src="https://i.ytimg.com/vi/wU0k0dhkD4M/mqdefault.jpg" alt="Learn French - French Listening Comprehension - Looking At Apartments in France"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0W1GFbzc5ANZqtidjrLUAGJ" title="Learn French - French Listening Comprehension - Looking At Apartments in France">Learn French - French Listening Comprehension - Looking At Apartments in France</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>20</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtJL6GKh6j0W1GFbzc5ANZqtidjrLUAGJ" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0XTJUKXLMjxjJgZyMfGWg7T" title="Learn French - French Listening Comprehension - At a French Bookstore"><img width="100px" src="https://i.ytimg.com/vi/ZJug3VLV1Xw/mqdefault.jpg" alt="Learn French - French Listening Comprehension - At a French Bookstore"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLtJL6GKh6j0XTJUKXLMjxjJgZyMfGWg7T" title="Learn French - French Listening Comprehension - At a French Bookstore">Learn French - French Listening Comprehension - At a French Bookstore</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=4" title="see 4">4</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=4" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLtJL6GKh6j0XTJUKXLMjxjJgZyMfGWg7T" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>6</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLPZ2BdpyPMq7eaIAiydbf3WGJYjZqjZg8" title="French for Bengali/Bangalee Beginners | Chap-1 | Part-1"><img width="100px" src="https://i.ytimg.com/vi/5O_RAAqsR38/mqdefault.jpg" alt="French for Bengali/Bangalee Beginners | Chap-1 | Part-1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLPZ2BdpyPMq7eaIAiydbf3WGJYjZqjZg8" title="French for Bengali/Bangalee Beginners | Chap-1 | Part-1">French for Bengali/Bangalee Beginners | Chap-1 | Part-1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>33</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLPZ2BdpyPMq7eaIAiydbf3WGJYjZqjZg8" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>5</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLWC3jTo5VQfCXN81Xr-J38E_wiupPzwCt" title="Aline by Christophe (with French & English subtitles)"><img width="100px" src="https://i.ytimg.com/vi/NU9qYbLtPog/mqdefault.jpg" alt="Aline by Christophe (with French & English subtitles)"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLWC3jTo5VQfCXN81Xr-J38E_wiupPzwCt" title="Aline by Christophe (with French & English subtitles)">Aline by Christophe (with French & English subtitles)</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>25</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLWC3jTo5VQfCXN81Xr-J38E_wiupPzwCt" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>4</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLFFF017A3B68A9931" title="Lesson 1 - Do you want to Learn French Online for Free? Manesca French for Beginners"><img width="100px" src="https://i.ytimg.com/vi/4SKzf9wlqpA/mqdefault.jpg" alt="Lesson 1 - Do you want to Learn French Online for Free? Manesca French for Beginners"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLFFF017A3B68A9931" title="Lesson 1 - Do you want to Learn French Online for Free? Manesca French for Beginners">Lesson 1 - Do you want to Learn French Online for Free? Manesca French for Beginners</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>50</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLFFF017A3B68A9931" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>3</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL957959068437A898" title="Learn French"><img width="100px" src="https://i.ytimg.com/vi/wbZl-ix75ug/mqdefault.jpg" alt="Learn French"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL957959068437A898" title="Learn French">Learn French</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>32</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL957959068437A898" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>2</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLZNV0gmRjgU_WM3LFRoG0TupSeT5WjLQf" title="[French for beginners] 5 hours to learn French basics - Units 1-2-3-4"><img width="100px" src="https://i.ytimg.com/vi/2S-1DTrCvIE/mqdefault.jpg" alt="[French for beginners] 5 hours to learn French basics - Units 1-2-3-4"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLZNV0gmRjgU_WM3LFRoG0TupSeT5WjLQf" title="[French for beginners] 5 hours to learn French basics - Units 1-2-3-4">[French for beginners] 5 hours to learn French basics - Units 1-2-3-4</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>21</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLZNV0gmRjgU_WM3LFRoG0TupSeT5WjLQf" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxIXIaLcdFwD_gbMXHUOYqQtXTIPrys8L" title="Learn French with Alexa Polidoro Free french Lesson 1"><img width="100px" src="https://i.ytimg.com/vi/eq--V9P4rmM/mqdefault.jpg" alt="Learn French with Alexa Polidoro Free french Lesson 1"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxIXIaLcdFwD_gbMXHUOYqQtXTIPrys8L" title="Learn French with Alexa Polidoro Free french Lesson 1">Learn French with Alexa Polidoro Free french Lesson 1</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=3" title="see 3">3</a></td>
+	  <td>32</td>
+      <td><a target="_blank" href="youtube/?CategoryID=3" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLxIXIaLcdFwD_gbMXHUOYqQtXTIPrys8L" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

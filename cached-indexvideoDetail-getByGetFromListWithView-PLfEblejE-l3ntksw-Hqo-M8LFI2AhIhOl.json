@@ -1,0 +1,256 @@
+  <html>
+<head>
+      <title>Videos by List PLfEblejE-l3ntksw-Hqo-M8LFI2AhIhOl</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 Watched (1)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 New Videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Beginner (17)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Listening (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Grammar (29)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulary (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Reading (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Writing (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciation (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Speaking (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exams (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 German Songs (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 German Film (22)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 German for Kids (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=15> 15 DSH Exams (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Study in Germany (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 Life in Germany (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numbers (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Shopping (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Food (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Health (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Weather (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=24> 24 Music (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=25> 25 Top playlist (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=26> 26 Tip learn German (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=27> 27 Conversation (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 Travel (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 Advance (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 Course (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 Story (14)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 New Videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 Watched (1)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Shopping (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Food (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 Course (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Study in Germany (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numbers (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Weather (6)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Grammar (29)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 German Film (22)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Beginner (17)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulary (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Listening (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 Advance (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 Story (14)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 Travel (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Writing (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciation (12)</a></div>
+</div>
+<br/>
+<a title='Có 1 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 watched L(1)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(5)</a> |<a title='Có 17 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(17)</a> |<a title='Có 15 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(15)</a> |<a title='Có 29 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(29)</a> |<a title='Có 16 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(16)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(7)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(12)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(12)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(11)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(9)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(8)</a> |<a title='Có 22 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(22)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=15> 15 dshexams L(9)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(6)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 life L(11)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(6)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(4)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(5)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(6)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(11)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 funny L(6)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=24> 24 removeads L(9)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=25> 25 top-playlist L(12)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=26> 26 tip-learn-german L(10)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=27> 27 conversation L(7)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 travel L(13)</a> |<a title='Có 15 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 advance L(15)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 course L(5)</a> |<a title='Có 14 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 story L(14)</a> |<br/>Số lượng Videos trong DB: 6061 Videos<br/>Số lượng Videos trong DB: 322 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>13079</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13079" title="Pieta (Koreanisches Drama von Kim Ki-Duk, Drama Film deutsch in voller Länge, Netzkino Drama) *HD*"><img width="100px" src="https://i.ytimg.com/vi/pv1_vCOyP7g/mqdefault.jpg" alt="Pieta (Koreanisches Drama von Kim Ki-Duk, Drama Film deutsch in voller Länge, Netzkino Drama) *HD*"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13079" title="Pieta (Koreanisches Drama von Kim Ki-Duk, Drama Film deutsch in voller Länge, Netzkino Drama) *HD*">Pieta (Koreanisches Drama von Kim Ki-Duk, Drama Film deutsch in voller Länge, Netzkino Drama) *HD*</a></td>
+      <td>01:43:50</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3ntksw-Hqo-M8LFI2AhIhOl" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13079" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13080</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13080" title="Border Psycho (ganze Filme auf Deutsch anschauen in voller Länge, komplette Filme auf Deutsch)"><img width="100px" src="https://i.ytimg.com/vi/S83lyHATaE8/mqdefault.jpg" alt="Border Psycho (ganze Filme auf Deutsch anschauen in voller Länge, komplette Filme auf Deutsch)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13080" title="Border Psycho (ganze Filme auf Deutsch anschauen in voller Länge, komplette Filme auf Deutsch)">Border Psycho (ganze Filme auf Deutsch anschauen in voller Länge, komplette Filme auf Deutsch)</a></td>
+      <td>01:44:36</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3ntksw-Hqo-M8LFI2AhIhOl" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13080" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13082</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13082" title="Staudamm Inferno (Action Thriller Deutsch Ganzer Film, Drama auf Deutsch anschauen in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/r1LZXqy4WoU/mqdefault.jpg" alt="Staudamm Inferno (Action Thriller Deutsch Ganzer Film, Drama auf Deutsch anschauen in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13082" title="Staudamm Inferno (Action Thriller Deutsch Ganzer Film, Drama auf Deutsch anschauen in voller Länge)">Staudamm Inferno (Action Thriller Deutsch Ganzer Film, Drama auf Deutsch anschauen in voller Länge)</a></td>
+      <td>02:03:23</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3ntksw-Hqo-M8LFI2AhIhOl" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13082" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13083</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13083" title="Der Dorflehrer (Drama auf deutsch anschauen in voller Länge, Liebesfilm ganzer Film Deutsch)"><img width="100px" src="https://i.ytimg.com/vi/WfLFbf5tv0s/mqdefault.jpg" alt="Der Dorflehrer (Drama auf deutsch anschauen in voller Länge, Liebesfilm ganzer Film Deutsch)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13083" title="Der Dorflehrer (Drama auf deutsch anschauen in voller Länge, Liebesfilm ganzer Film Deutsch)">Der Dorflehrer (Drama auf deutsch anschauen in voller Länge, Liebesfilm ganzer Film Deutsch)</a></td>
+      <td>01:55:45</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3ntksw-Hqo-M8LFI2AhIhOl" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13083" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13084</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13084" title="Magere Zeiten - Der Film mit dem Schwein (Komödie in voller Länge, kompletter Film auf Deutsch)"><img width="100px" src="https://i.ytimg.com/vi/TF5GUkv4TGw/mqdefault.jpg" alt="Magere Zeiten - Der Film mit dem Schwein (Komödie in voller Länge, kompletter Film auf Deutsch)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13084" title="Magere Zeiten - Der Film mit dem Schwein (Komödie in voller Länge, kompletter Film auf Deutsch)">Magere Zeiten - Der Film mit dem Schwein (Komödie in voller Länge, kompletter Film auf Deutsch)</a></td>
+      <td>01:32:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3ntksw-Hqo-M8LFI2AhIhOl" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13084" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13085</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13085" title="In My Skin (Horror in voller Länge, ganze Filme auf Deutsch anschauen,  komplettes Drama Deutsch)"><img width="100px" src="https://i.ytimg.com/vi/DO8TCo0jkvY/mqdefault.jpg" alt="In My Skin (Horror in voller Länge, ganze Filme auf Deutsch anschauen,  komplettes Drama Deutsch)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13085" title="In My Skin (Horror in voller Länge, ganze Filme auf Deutsch anschauen,  komplettes Drama Deutsch)">In My Skin (Horror in voller Länge, ganze Filme auf Deutsch anschauen,  komplettes Drama Deutsch)</a></td>
+      <td>01:29:43</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3ntksw-Hqo-M8LFI2AhIhOl" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13085" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

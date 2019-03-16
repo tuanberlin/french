@@ -1,0 +1,352 @@
+  <html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script>  <title>Category Video Manage</title>
+
+</head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 Watched (1)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 New Videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Beginner (17)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Listening (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Grammar (29)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulary (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Reading (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Writing (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciation (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Speaking (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exams (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 German Songs (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 German Film (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 German for Kids (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=15> 15 DSH Exams (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Study in Germany (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 Life in Germany (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numbers (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Shopping (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Food (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Health (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Weather (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=24> 24 Music (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=25> 25 Top playlist (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=26> 26 Tip learn German (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=27> 27 Conversation (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 Travel (14)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 Advance (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 Course (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 Story (14)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 New Videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 Watched (1)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Shopping (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 Course (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Study in Germany (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numbers (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Weather (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Reading (7)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Grammar (29)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Beginner (17)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulary (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 German Film (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Listening (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 Advance (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 Travel (14)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 Story (14)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Food (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Writing (12)</a></div>
+</div>
+<br/>
+<a title='Có 1 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 watched L(1)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(5)</a> |<a title='Có 17 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(17)</a> |<a title='Có 15 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(15)</a> |<a title='Có 29 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(29)</a> |<a title='Có 16 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(16)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(7)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(12)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(12)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(11)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(9)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(8)</a> |<a title='Có 16 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(16)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=15> 15 dshexams L(9)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(6)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 life L(11)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(6)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(4)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(13)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(6)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(11)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 funny L(6)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=24> 24 removeads L(9)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=25> 25 top-playlist L(12)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=26> 26 tip-learn-german L(10)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=27> 27 conversation L(7)</a> |<a title='Có 14 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 travel L(14)</a> |<a title='Có 15 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 advance L(15)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 course L(5)</a> |<a title='Có 14 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 story L(14)</a> |<br/>Số lượng Videos trong DB: 5948 Videos<br/>Số lượng Videos trong DB: 325 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Category Video Manage</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>CategoryID</th>
+      <th>ListVideo count</th>
+      <th>Add More List to this Category</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+	  <th>CategoryID</th>
+      <th>ListVideo count</th>
+      <th>Add More List to this Category</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>356</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLYzp2xhTw9W3KG9PF_AKUia4_OCXuJquo" title="GERMAN LESSON 4: Learn the German Country Names & Continents! ???"><img width="100px" src="https://i.ytimg.com/vi/OuDNsultS9k/mqdefault.jpg" alt="GERMAN LESSON 4: Learn the German Country Names & Continents! ???"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLYzp2xhTw9W3KG9PF_AKUia4_OCXuJquo" title="GERMAN LESSON 4: Learn the German Country Names & Continents! ???">GERMAN LESSON 4: Learn the German Country Names & Continents! ???</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>5</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLYzp2xhTw9W3KG9PF_AKUia4_OCXuJquo" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>358</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_zJg4G8wbH9OYH_8x-l8FRRzWtptph63" title="LIVING IN MUNICH PT. 4"><img width="100px" src="https://i.ytimg.com/vi/0QbZET2_GUs/mqdefault.jpg" alt="LIVING IN MUNICH PT. 4"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL_zJg4G8wbH9OYH_8x-l8FRRzWtptph63" title="LIVING IN MUNICH PT. 4">LIVING IN MUNICH PT. 4</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>4</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL_zJg4G8wbH9OYH_8x-l8FRRzWtptph63" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>359</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxicOrUlj3fj_-0jZl6O_jpbhsrUYOA9T" title="Englisch lernen für Anfänger kostenlos - Travel German English vocabulary part 1 - Englisch Vokabeln"><img width="100px" src="https://i.ytimg.com/vi/OqKRS_IPK5M/mqdefault.jpg" alt="Englisch lernen für Anfänger kostenlos - Travel German English vocabulary part 1 - Englisch Vokabeln"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLxicOrUlj3fj_-0jZl6O_jpbhsrUYOA9T" title="Englisch lernen für Anfänger kostenlos - Travel German English vocabulary part 1 - Englisch Vokabeln">Englisch lernen für Anfänger kostenlos - Travel German English vocabulary part 1 - Englisch Vokabeln</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLxicOrUlj3fj_-0jZl6O_jpbhsrUYOA9T" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>437</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLb1uTPeJI2FNaZEaSkAYJlczKggAaKCvb" title="WANN? | Asien Vlogs"><img width="100px" src="https://i.ytimg.com/vi/meCLFd7T3h0/mqdefault.jpg" alt="WANN? | Asien Vlogs"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLb1uTPeJI2FNaZEaSkAYJlczKggAaKCvb" title="WANN? | Asien Vlogs">WANN? | Asien Vlogs</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>9</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLb1uTPeJI2FNaZEaSkAYJlczKggAaKCvb" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>438</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLQTI0LZ1tbHnxjUYJYtvhQoZjZBlk2bVj" title="Rammstein - Reise Reise, Werhmacht, Deutschland Power"><img width="100px" src="https://i.ytimg.com/vi/W-OsuNNTgU4/mqdefault.jpg" alt="Rammstein - Reise Reise, Werhmacht, Deutschland Power"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLQTI0LZ1tbHnxjUYJYtvhQoZjZBlk2bVj" title="Rammstein - Reise Reise, Werhmacht, Deutschland Power">Rammstein - Reise Reise, Werhmacht, Deutschland Power</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>10</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLQTI0LZ1tbHnxjUYJYtvhQoZjZBlk2bVj" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>439</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLRTSJmKXa7FmQKapdZo_FIvEp2rnakXCa" title="Wir haben unsere Jobs gekündigt und reisen durch alle 47 Länder Europas!"><img width="100px" src="https://i.ytimg.com/vi/bmop8z98EgU/mqdefault.jpg" alt="Wir haben unsere Jobs gekündigt und reisen durch alle 47 Länder Europas!"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLRTSJmKXa7FmQKapdZo_FIvEp2rnakXCa" title="Wir haben unsere Jobs gekündigt und reisen durch alle 47 Länder Europas!">Wir haben unsere Jobs gekündigt und reisen durch alle 47 Länder Europas!</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>49</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLRTSJmKXa7FmQKapdZo_FIvEp2rnakXCa" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>440</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLH-KIQ9Se8YJNqwBklbgHqG1wj5aX-XOg" title="Malediven (Maldives) ???? Six Senses Laamu ???????????????? Drohnen-Aufnahmen (Drone Shots) ????"><img width="100px" src="https://i.ytimg.com/vi/bZkLuCgORi4/mqdefault.jpg" alt="Malediven (Maldives) ???? Six Senses Laamu ???????????????? Drohnen-Aufnahmen (Drone Shots) ????"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLH-KIQ9Se8YJNqwBklbgHqG1wj5aX-XOg" title="Malediven (Maldives) ???? Six Senses Laamu ???????????????? Drohnen-Aufnahmen (Drone Shots) ????">Malediven (Maldives) ???? Six Senses Laamu ???????????????? Drohnen-Aufnahmen (Drone Shots) ????</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>7</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLH-KIQ9Se8YJNqwBklbgHqG1wj5aX-XOg" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>441</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjh8wE9vwvWaVRhAF2M6cQ0ZceyIupD-3" title="Roadtrip - So fantastisch ist unsere Umgebung!"><img width="100px" src="https://i.ytimg.com/vi/FPxpEcWY-d4/mqdefault.jpg" alt="Roadtrip - So fantastisch ist unsere Umgebung!"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLjh8wE9vwvWaVRhAF2M6cQ0ZceyIupD-3" title="Roadtrip - So fantastisch ist unsere Umgebung!">Roadtrip - So fantastisch ist unsere Umgebung!</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>3</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLjh8wE9vwvWaVRhAF2M6cQ0ZceyIupD-3" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>442</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV4FXJgamfQJ5ewN8HPLpeVdYmdGGEIvV" title="Auf dem Landweg nach Griechenland! Reise-Vorbereitungen"><img width="100px" src="https://i.ytimg.com/vi/Xa6BugDG_IU/mqdefault.jpg" alt="Auf dem Landweg nach Griechenland! Reise-Vorbereitungen"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLV4FXJgamfQJ5ewN8HPLpeVdYmdGGEIvV" title="Auf dem Landweg nach Griechenland! Reise-Vorbereitungen">Auf dem Landweg nach Griechenland! Reise-Vorbereitungen</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>16</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLV4FXJgamfQJ5ewN8HPLpeVdYmdGGEIvV" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>443</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLD7eNbGwy5OgFlv0h-kLZydVaq8LdpHls" title="Trailer: Lenas Reise"><img width="100px" src="https://i.ytimg.com/vi/MakZc9SJRAg/mqdefault.jpg" alt="Trailer: Lenas Reise"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLD7eNbGwy5OgFlv0h-kLZydVaq8LdpHls" title="Trailer: Lenas Reise">Trailer: Lenas Reise</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>2</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLD7eNbGwy5OgFlv0h-kLZydVaq8LdpHls" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>444</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLcn1zNJ-C7Ltc5cUL87R_Tenoq0GV_9ty" title="Urlaubsziele in Spanien: Andalusien und Katalonien - Reisetipps"><img width="100px" src="https://i.ytimg.com/vi/a8rviJG-mto/mqdefault.jpg" alt="Urlaubsziele in Spanien: Andalusien und Katalonien - Reisetipps"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLcn1zNJ-C7Ltc5cUL87R_Tenoq0GV_9ty" title="Urlaubsziele in Spanien: Andalusien und Katalonien - Reisetipps">Urlaubsziele in Spanien: Andalusien und Katalonien - Reisetipps</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>42</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLcn1zNJ-C7Ltc5cUL87R_Tenoq0GV_9ty" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>445</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL07B0218E8BC8C154" title="Fahrradhauptstadt Münster | DW Deutsch"><img width="100px" src="https://i.ytimg.com/vi/d7HM4sxdCEQ/mqdefault.jpg" alt="Fahrradhauptstadt Münster | DW Deutsch"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PL07B0218E8BC8C154" title="Fahrradhauptstadt Münster | DW Deutsch">Fahrradhauptstadt Münster | DW Deutsch</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>46</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PL07B0218E8BC8C154" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>446</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLmPzo4bTWa1j1aNjZ0NWw6Jt2rEcAxvyE" title="Drei Chinesen mit dem Kontrabass - Kinderlieder zum Mitsingen | Sing Kinderlieder"><img width="100px" src="https://i.ytimg.com/vi/9C2cLTif4QU/mqdefault.jpg" alt="Drei Chinesen mit dem Kontrabass - Kinderlieder zum Mitsingen | Sing Kinderlieder"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLmPzo4bTWa1j1aNjZ0NWw6Jt2rEcAxvyE" title="Drei Chinesen mit dem Kontrabass - Kinderlieder zum Mitsingen | Sing Kinderlieder">Drei Chinesen mit dem Kontrabass - Kinderlieder zum Mitsingen | Sing Kinderlieder</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>12</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLmPzo4bTWa1j1aNjZ0NWw6Jt2rEcAxvyE" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>504</td>
+      <td><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdrKWT9w9Hg3eVswr9n01TODWrqS2KJE3" title="Dresscode: Oben ohne? | DW Deutsch"><img width="100px" src="https://i.ytimg.com/vi/4VPeRhFuRsc/mqdefault.jpg" alt="Dresscode: Oben ohne? | DW Deutsch"></a></td>
+      <td><b>List :</b><a href="?c=videoDetail&a=getByGetFromListWithView&k=PLdrKWT9w9Hg3eVswr9n01TODWrqS2KJE3" title="Dresscode: Oben ohne? | DW Deutsch">Dresscode: Oben ohne? | DW Deutsch</a></td>
+      <td><a href="?c=listDetail&a=getByCategoryIDWithCountWithView&k=28" title="see 28">28</a></td>
+	  <td>21</td>
+      <td><a target="_blank" href="youtube/?CategoryID=28" title="add more List Videos hier">Add more ListVideo</a></td>
+      <td><a class="delete" href="?c=listDetail&a=removeById&k=PLdrKWT9w9Hg3eVswr9n01TODWrqS2KJE3" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

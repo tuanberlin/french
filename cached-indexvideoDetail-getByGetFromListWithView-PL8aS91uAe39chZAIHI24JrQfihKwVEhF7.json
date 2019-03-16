@@ -1,0 +1,576 @@
+  <html>
+<head>
+      <title>Videos by List PL8aS91uAe39chZAIHI24JrQfihKwVEhF7</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nouvelles vidéos (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Nouvelles (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Débutants (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Écoute (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulaire (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En train de lire (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 L'écriture (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Prononciation (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlant (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Examens (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Chansons françaises (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Films français (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Français pour les enfants (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Etudier en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vie en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Nombres (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Achats (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Aliments (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Emplois (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Santé (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Regardé (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Nouvelles (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Etudier en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vie en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Regardé (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 L'écriture (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En train de lire (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Examens (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Chansons françaises (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Débutants (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlant (6)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Aliments (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Films français (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nouvelles vidéos (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Écoute (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulaire (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Français pour les enfants (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Nombres (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Emplois (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Santé (8)</a></div>
+</div>
+<br/>
+<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(0)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(6)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(8)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(11)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(8)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(5)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(3)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(7)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(6)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(5)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(5)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(9)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(0)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 paris L(0)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(8)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(6)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(10)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(8)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 2772 Videos<br/>Số lượng Videos trong DB: 130 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>1639</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1639" title="Learn french with french movies : Yamakasi part1"><img width="100px" src="https://i.ytimg.com/vi/aEmfUjEpMs0/mqdefault.jpg" alt="Learn french with french movies : Yamakasi part1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1639" title="Learn french with french movies : Yamakasi part1">Learn french with french movies : Yamakasi part1</a></td>
+      <td>00:02:33</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1639" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1640</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1640" title="Learn french with french movies : Banlieu13 ( District13 )"><img width="100px" src="https://i.ytimg.com/vi/5DPGOf34Ems/mqdefault.jpg" alt="Learn french with french movies : Banlieu13 ( District13 )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1640" title="Learn french with french movies : Banlieu13 ( District13 )">Learn french with french movies : Banlieu13 ( District13 )</a></td>
+      <td>00:02:54</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1640" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1642</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1642" title="FRENCH LESSON - learn french with a french movie - Yamakasi part3"><img width="100px" src="https://i.ytimg.com/vi/kYfksdXBOd0/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie - Yamakasi part3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1642" title="FRENCH LESSON - learn french with a french movie - Yamakasi part3">FRENCH LESSON - learn french with a french movie - Yamakasi part3</a></td>
+      <td>00:02:05</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1642" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1643</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1643" title="LEARN FRENCH with a french movie - french lesson : Yamakasi part4"><img width="100px" src="https://i.ytimg.com/vi/auCq0hCFLaY/mqdefault.jpg" alt="LEARN FRENCH with a french movie - french lesson : Yamakasi part4"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1643" title="LEARN FRENCH with a french movie - french lesson : Yamakasi part4">LEARN FRENCH with a french movie - french lesson : Yamakasi part4</a></td>
+      <td>00:02:31</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1643" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1644</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1644" title="LEARN FRENCH with a french movie : OSS 117 ( speechless )"><img width="100px" src="https://i.ytimg.com/vi/Vk1HqnxIqms/mqdefault.jpg" alt="LEARN FRENCH with a french movie : OSS 117 ( speechless )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1644" title="LEARN FRENCH with a french movie : OSS 117 ( speechless )">LEARN FRENCH with a french movie : OSS 117 ( speechless )</a></td>
+      <td>00:02:27</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1644" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1645</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1645" title="FRENCH LESSON - learn french with a french movie : Amélie Poulain"><img width="100px" src="https://i.ytimg.com/vi/hQ7EzOE4u_s/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : Amélie Poulain"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1645" title="FRENCH LESSON - learn french with a french movie : Amélie Poulain">FRENCH LESSON - learn french with a french movie : Amélie Poulain</a></td>
+      <td>00:02:15</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1645" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1646</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1646" title="FRENCH LESSON - learn french with french movies : OSS117 part2"><img width="100px" src="https://i.ytimg.com/vi/rqCCl5Dx5Mw/mqdefault.jpg" alt="FRENCH LESSON - learn french with french movies : OSS117 part2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1646" title="FRENCH LESSON - learn french with french movies : OSS117 part2">FRENCH LESSON - learn french with french movies : OSS117 part2</a></td>
+      <td>00:01:45</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1646" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1648</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1648" title="LEARN FRENCH - french lesson with a french movie : la chèvre (part 2)"><img width="100px" src="https://i.ytimg.com/vi/vSTLzHBkqc4/mqdefault.jpg" alt="LEARN FRENCH - french lesson with a french movie : la chèvre (part 2)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1648" title="LEARN FRENCH - french lesson with a french movie : la chèvre (part 2)">LEARN FRENCH - french lesson with a french movie : la chèvre (part 2)</a></td>
+      <td>00:01:23</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1648" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1649</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1649" title="FRENCH LESSON - learn french with a french movie : la chèvre"><img width="100px" src="https://i.ytimg.com/vi/GXizMS2WdHM/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : la chèvre"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1649" title="FRENCH LESSON - learn french with a french movie : la chèvre">FRENCH LESSON - learn french with a french movie : la chèvre</a></td>
+      <td>00:02:11</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1649" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1650</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1650" title="LEARN FRENCH - french lesson with a french movie : la chèvre (part 3)"><img width="100px" src="https://i.ytimg.com/vi/p9T_43NyKl4/mqdefault.jpg" alt="LEARN FRENCH - french lesson with a french movie : la chèvre (part 3)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1650" title="LEARN FRENCH - french lesson with a french movie : la chèvre (part 3)">LEARN FRENCH - french lesson with a french movie : la chèvre (part 3)</a></td>
+      <td>00:01:35</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1650" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1651</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1651" title="LEARN FRENCH - french lesson with french movie : les chevaliers du ciel"><img width="100px" src="https://i.ytimg.com/vi/6XYGs5nASsE/mqdefault.jpg" alt="LEARN FRENCH - french lesson with french movie : les chevaliers du ciel"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1651" title="LEARN FRENCH - french lesson with french movie : les chevaliers du ciel">LEARN FRENCH - french lesson with french movie : les chevaliers du ciel</a></td>
+      <td>00:03:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1651" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1652</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1652" title="FRENCH LESSON - learn french with a french movie : Dobermann"><img width="100px" src="https://i.ytimg.com/vi/DsBWilFxp6c/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : Dobermann"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1652" title="FRENCH LESSON - learn french with a french movie : Dobermann">FRENCH LESSON - learn french with a french movie : Dobermann</a></td>
+      <td>00:02:29</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1652" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1653</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1653" title="FRENCH LESSON - learn french with french movie : Dobermann part 2"><img width="100px" src="https://i.ytimg.com/vi/tWQT5huMc2g/mqdefault.jpg" alt="FRENCH LESSON - learn french with french movie : Dobermann part 2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1653" title="FRENCH LESSON - learn french with french movie : Dobermann part 2">FRENCH LESSON - learn french with french movie : Dobermann part 2</a></td>
+      <td>00:02:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1653" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1654</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1654" title="FRENCH LESSON - learn french with french movies : Dobermann  part 3"><img width="100px" src="https://i.ytimg.com/vi/1lry3NCim_8/mqdefault.jpg" alt="FRENCH LESSON - learn french with french movies : Dobermann  part 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1654" title="FRENCH LESSON - learn french with french movies : Dobermann  part 3">FRENCH LESSON - learn french with french movies : Dobermann  part 3</a></td>
+      <td>00:02:22</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1654" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1656</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1656" title="LEARN FRENCH  - french lesson with french movies : Michel Vaillant part 1"><img width="100px" src="https://i.ytimg.com/vi/RqMj8bEP4ds/mqdefault.jpg" alt="LEARN FRENCH  - french lesson with french movies : Michel Vaillant part 1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1656" title="LEARN FRENCH  - french lesson with french movies : Michel Vaillant part 1">LEARN FRENCH  - french lesson with french movies : Michel Vaillant part 1</a></td>
+      <td>00:01:56</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1656" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1657</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1657" title="LEARN FRENCH - french lesson with a french movie : Michel Vaillant part2"><img width="100px" src="https://i.ytimg.com/vi/P7Sv9kMuF_U/mqdefault.jpg" alt="LEARN FRENCH - french lesson with a french movie : Michel Vaillant part2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1657" title="LEARN FRENCH - french lesson with a french movie : Michel Vaillant part2">LEARN FRENCH - french lesson with a french movie : Michel Vaillant part2</a></td>
+      <td>00:01:38</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1657" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1658</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1658" title="Best fight scene in a french movie : Samouraïs"><img width="100px" src="https://i.ytimg.com/vi/nQZ09O8ZMr4/mqdefault.jpg" alt="Best fight scene in a french movie : Samouraïs"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1658" title="Best fight scene in a french movie : Samouraïs">Best fight scene in a french movie : Samouraïs</a></td>
+      <td>00:05:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1658" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1659</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1659" title="FRENCH LESSON - learn french with a french movie : Michel Vaillant part 3"><img width="100px" src="https://i.ytimg.com/vi/4w68YdMTWxY/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : Michel Vaillant part 3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1659" title="FRENCH LESSON - learn french with a french movie : Michel Vaillant part 3">FRENCH LESSON - learn french with a french movie : Michel Vaillant part 3</a></td>
+      <td>00:01:45</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1659" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1660</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1660" title="LEARN FRENCH - french lesson with a french movie : Les fils du vent"><img width="100px" src="https://i.ytimg.com/vi/lEO1W2POQFI/mqdefault.jpg" alt="LEARN FRENCH - french lesson with a french movie : Les fils du vent"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1660" title="LEARN FRENCH - french lesson with a french movie : Les fils du vent">LEARN FRENCH - french lesson with a french movie : Les fils du vent</a></td>
+      <td>00:03:55</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1660" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1663</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1663" title="LEARN FRENCH - french lesson with a french movie : Brotherhood of the Wolf"><img width="100px" src="https://i.ytimg.com/vi/RMhJs2OFjNE/mqdefault.jpg" alt="LEARN FRENCH - french lesson with a french movie : Brotherhood of the Wolf"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1663" title="LEARN FRENCH - french lesson with a french movie : Brotherhood of the Wolf">LEARN FRENCH - french lesson with a french movie : Brotherhood of the Wolf</a></td>
+      <td>00:03:09</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1663" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1664</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1664" title="FRENCH LESSON - learn french with a french movie"><img width="100px" src="https://i.ytimg.com/vi/qfdfzcdJw3k/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1664" title="FRENCH LESSON - learn french with a french movie">FRENCH LESSON - learn french with a french movie</a></td>
+      <td>00:02:23</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1664" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1665</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1665" title="FRENCH LESSON - learn french with a short french movie : Le pipi"><img width="100px" src="https://i.ytimg.com/vi/gcfCxIPt3VM/mqdefault.jpg" alt="FRENCH LESSON - learn french with a short french movie : Le pipi"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1665" title="FRENCH LESSON - learn french with a short french movie : Le pipi">FRENCH LESSON - learn french with a short french movie : Le pipi</a></td>
+      <td>00:01:25</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1665" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1666</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1666" title="FRENCH LESSON - learn french with a short movie : La barbichette"><img width="100px" src="https://i.ytimg.com/vi/sfeQQHdmHEg/mqdefault.jpg" alt="FRENCH LESSON - learn french with a short movie : La barbichette"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1666" title="FRENCH LESSON - learn french with a short movie : La barbichette">FRENCH LESSON - learn french with a short movie : La barbichette</a></td>
+      <td>00:02:42</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1666" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1667</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1667" title="FRENCH LESSON - learn french with a french movie : Les compères part1"><img width="100px" src="https://i.ytimg.com/vi/WD_PSIfDqRM/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : Les compères part1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1667" title="FRENCH LESSON - learn french with a french movie : Les compères part1">FRENCH LESSON - learn french with a french movie : Les compères part1</a></td>
+      <td>00:02:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1667" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1668</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1668" title="LEARN FRENCH with a french movie  : Les compères part2"><img width="100px" src="https://i.ytimg.com/vi/89BdY9-aJ7g/mqdefault.jpg" alt="LEARN FRENCH with a french movie  : Les compères part2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1668" title="LEARN FRENCH with a french movie  : Les compères part2">LEARN FRENCH with a french movie  : Les compères part2</a></td>
+      <td>00:01:17</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1668" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1669</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1669" title="Learn french with a french movie : Les compères part3 ( headbutt scene )"><img width="100px" src="https://i.ytimg.com/vi/8KQgx3xbPL4/mqdefault.jpg" alt="Learn french with a french movie : Les compères part3 ( headbutt scene )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1669" title="Learn french with a french movie : Les compères part3 ( headbutt scene )">Learn french with a french movie : Les compères part3 ( headbutt scene )</a></td>
+      <td>00:01:13</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1669" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1670</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1670" title="FRENCH LESSON - learn french with a french movie : La cité de la peur part1"><img width="100px" src="https://i.ytimg.com/vi/UX02NDCmg30/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : La cité de la peur part1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1670" title="FRENCH LESSON - learn french with a french movie : La cité de la peur part1">FRENCH LESSON - learn french with a french movie : La cité de la peur part1</a></td>
+      <td>00:02:17</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1670" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1671</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1671" title="FRENCH LESSON - learn french with a french movie : La cité de la peur part 2"><img width="100px" src="https://i.ytimg.com/vi/feBk_CA42zI/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : La cité de la peur part 2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1671" title="FRENCH LESSON - learn french with a french movie : La cité de la peur part 2">FRENCH LESSON - learn french with a french movie : La cité de la peur part 2</a></td>
+      <td>00:01:36</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1671" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1672</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1672" title="Learn french with a french movie : la cité de la peur part4"><img width="100px" src="https://i.ytimg.com/vi/4LAtXp53Vyk/mqdefault.jpg" alt="Learn french with a french movie : la cité de la peur part4"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1672" title="Learn french with a french movie : la cité de la peur part4">Learn french with a french movie : la cité de la peur part4</a></td>
+      <td>00:02:07</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1672" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1673</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1673" title="LEARN FRENCH with a french movie : La cité de la peur  part5"><img width="100px" src="https://i.ytimg.com/vi/ndqSaoeyLIw/mqdefault.jpg" alt="LEARN FRENCH with a french movie : La cité de la peur  part5"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1673" title="LEARN FRENCH with a french movie : La cité de la peur  part5">LEARN FRENCH with a french movie : La cité de la peur  part5</a></td>
+      <td>00:01:37</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1673" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1675</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1675" title="FRENCH LESSON - Learn french with movies : Arsène Lupin part1"><img width="100px" src="https://i.ytimg.com/vi/0CtWs8492bA/mqdefault.jpg" alt="FRENCH LESSON - Learn french with movies : Arsène Lupin part1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1675" title="FRENCH LESSON - Learn french with movies : Arsène Lupin part1">FRENCH LESSON - Learn french with movies : Arsène Lupin part1</a></td>
+      <td>00:02:13</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1675" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1676</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1676" title="LEARN FRENCH WITH A FRENCH MOVIE : Arsène Lupin part2"><img width="100px" src="https://i.ytimg.com/vi/Xhe7RrwzNPk/mqdefault.jpg" alt="LEARN FRENCH WITH A FRENCH MOVIE : Arsène Lupin part2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1676" title="LEARN FRENCH WITH A FRENCH MOVIE : Arsène Lupin part2">LEARN FRENCH WITH A FRENCH MOVIE : Arsène Lupin part2</a></td>
+      <td>00:01:33</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1676" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1677</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1677" title="FRENCH LESSON - learn french with a french movie : Arsène Lupin part3"><img width="100px" src="https://i.ytimg.com/vi/w5nLFIY4oeE/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : Arsène Lupin part3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1677" title="FRENCH LESSON - learn french with a french movie : Arsène Lupin part3">FRENCH LESSON - learn french with a french movie : Arsène Lupin part3</a></td>
+      <td>00:01:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1677" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1678</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1678" title="LEARN FRENCH WITH A FRENCH MOVIE ( & subtitles ) : Arsene Lupin part4"><img width="100px" src="https://i.ytimg.com/vi/9ARoIzYgVJY/mqdefault.jpg" alt="LEARN FRENCH WITH A FRENCH MOVIE ( & subtitles ) : Arsene Lupin part4"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1678" title="LEARN FRENCH WITH A FRENCH MOVIE ( & subtitles ) : Arsene Lupin part4">LEARN FRENCH WITH A FRENCH MOVIE ( & subtitles ) : Arsene Lupin part4</a></td>
+      <td>00:02:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1678" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1679</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1679" title="LEARN FRENCH WITH A FRENCH MOVIE ( & subtitles ) : Arsène Lupin part5"><img width="100px" src="https://i.ytimg.com/vi/E6WDzG3DoYs/mqdefault.jpg" alt="LEARN FRENCH WITH A FRENCH MOVIE ( & subtitles ) : Arsène Lupin part5"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1679" title="LEARN FRENCH WITH A FRENCH MOVIE ( & subtitles ) : Arsène Lupin part5">LEARN FRENCH WITH A FRENCH MOVIE ( & subtitles ) : Arsène Lupin part5</a></td>
+      <td>00:01:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1679" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1680</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1680" title="FRENCH LESSON - LEARN FRENCH WITH A FRENCH MOVIE : Dobermann part4"><img width="100px" src="https://i.ytimg.com/vi/i6TcCLrPszs/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH A FRENCH MOVIE : Dobermann part4"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1680" title="FRENCH LESSON - LEARN FRENCH WITH A FRENCH MOVIE : Dobermann part4">FRENCH LESSON - LEARN FRENCH WITH A FRENCH MOVIE : Dobermann part4</a></td>
+      <td>00:01:03</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1680" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1681</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1681" title="FRENCH LESSON -  Learn french with a french movie : Le pacte des loups part2"><img width="100px" src="https://i.ytimg.com/vi/MoQfKRNI720/mqdefault.jpg" alt="FRENCH LESSON -  Learn french with a french movie : Le pacte des loups part2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1681" title="FRENCH LESSON -  Learn french with a french movie : Le pacte des loups part2">FRENCH LESSON -  Learn french with a french movie : Le pacte des loups part2</a></td>
+      <td>00:02:23</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1681" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1682</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1682" title="FRENCH LESSON - learn french with a french movie : Le pacte des loups part3"><img width="100px" src="https://i.ytimg.com/vi/VQGW0dYaVg8/mqdefault.jpg" alt="FRENCH LESSON - learn french with a french movie : Le pacte des loups part3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1682" title="FRENCH LESSON - learn french with a french movie : Le pacte des loups part3">FRENCH LESSON - learn french with a french movie : Le pacte des loups part3</a></td>
+      <td>00:01:59</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39chZAIHI24JrQfihKwVEhF7" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1682" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

@@ -1,0 +1,626 @@
+  <html>
+<head>
+      <title>Videos by List PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nouvelles vidéos (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Nouvelles (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Débutants (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Écoute (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulaire (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En train de lire (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 L'écriture (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Prononciation (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlant (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Examens (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Chansons françaises (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Films français (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Français pour les enfants (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Etudier en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vie en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Nombres (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Achats (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Aliments (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Emplois (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Santé (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Regardé (0)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 Nouvelles (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Etudier en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 La vie en France (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Regardé (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 L'écriture (3)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 En train de lire (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Examens (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 Chansons françaises (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Débutants (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Parlant (6)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Gramar (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Aliments (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 Films français (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 Nouvelles vidéos (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Écoute (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulaire (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 Français pour les enfants (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Nombres (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Emplois (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Santé (8)</a></div>
+</div>
+<br/>
+<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(0)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(6)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(8)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(11)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(8)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(5)</a> |<a title='Có 3 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(3)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(7)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(6)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(5)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(5)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(9)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(0)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 paris L(0)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(8)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(6)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(10)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(8)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(8)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 watched L(0)</a> |<br/>Số lượng Videos trong DB: 2769 Videos<br/>Số lượng Videos trong DB: 130 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>1858</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1858" title="LEARN FRENCH - french lesson with Sherlock Holmes ( part 2 )"><img width="100px" src="https://i.ytimg.com/vi/3lYLWZbuVuw/mqdefault.jpg" alt="LEARN FRENCH - french lesson with Sherlock Holmes ( part 2 )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1858" title="LEARN FRENCH - french lesson with Sherlock Holmes ( part 2 )">LEARN FRENCH - french lesson with Sherlock Holmes ( part 2 )</a></td>
+      <td>00:00:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1858" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1859</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1859" title="FRENCH LESSON - learn french with Sherlock Holmes ( part 1 )"><img width="100px" src="https://i.ytimg.com/vi/XDcILHCbBDc/mqdefault.jpg" alt="FRENCH LESSON - learn french with Sherlock Holmes ( part 1 )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1859" title="FRENCH LESSON - learn french with Sherlock Holmes ( part 1 )">FRENCH LESSON - learn french with Sherlock Holmes ( part 1 )</a></td>
+      <td>00:02:56</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1859" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1860</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1860" title="FRENCH LESSON - learn french with Sherlock Holmes ( part 3 )"><img width="100px" src="https://i.ytimg.com/vi/Ba60DAanEgw/mqdefault.jpg" alt="FRENCH LESSON - learn french with Sherlock Holmes ( part 3 )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1860" title="FRENCH LESSON - learn french with Sherlock Holmes ( part 3 )">FRENCH LESSON - learn french with Sherlock Holmes ( part 3 )</a></td>
+      <td>00:01:37</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1860" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1861</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1861" title="LEARN FRENCH - french lesson with Inglorious Basterds"><img width="100px" src="https://i.ytimg.com/vi/4XGzk7yP4oo/mqdefault.jpg" alt="LEARN FRENCH - french lesson with Inglorious Basterds"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1861" title="LEARN FRENCH - french lesson with Inglorious Basterds">LEARN FRENCH - french lesson with Inglorious Basterds</a></td>
+      <td>00:06:13</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1861" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1862</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1862" title="LEARN FRENCH - a lesson with J.C. Van Damme ( Hard target  french dub )"><img width="100px" src="https://i.ytimg.com/vi/qBBCVMIlvmM/mqdefault.jpg" alt="LEARN FRENCH - a lesson with J.C. Van Damme ( Hard target  french dub )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1862" title="LEARN FRENCH - a lesson with J.C. Van Damme ( Hard target  french dub )">LEARN FRENCH - a lesson with J.C. Van Damme ( Hard target  french dub )</a></td>
+      <td>00:03:05</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1862" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1863</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1863" title="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part 1"><img width="100px" src="https://i.ytimg.com/vi/aWZuJjv76xc/mqdefault.jpg" alt="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part 1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1863" title="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part 1">LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part 1</a></td>
+      <td>00:02:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1863" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1864</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1864" title="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part2"><img width="100px" src="https://i.ytimg.com/vi/3gSavmZ9WHY/mqdefault.jpg" alt="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1864" title="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part2">LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part2</a></td>
+      <td>00:02:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1864" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1865</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1865" title="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part 4"><img width="100px" src="https://i.ytimg.com/vi/P483WZsZ488/mqdefault.jpg" alt="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part 4"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1865" title="LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part 4">LEARN FRENCH - french lesson with Roger Rabbit ( french dub ) part 4</a></td>
+      <td>00:01:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1865" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1866</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1866" title="LEARN FRENCH with Roger Rabbit ( french dub ) part5"><img width="100px" src="https://i.ytimg.com/vi/-3sscy8i1CM/mqdefault.jpg" alt="LEARN FRENCH with Roger Rabbit ( french dub ) part5"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1866" title="LEARN FRENCH with Roger Rabbit ( french dub ) part5">LEARN FRENCH with Roger Rabbit ( french dub ) part5</a></td>
+      <td>00:01:17</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1866" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1867</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1867" title="LEARN FRENCH with : 2 mules for sister Sara part1"><img width="100px" src="https://i.ytimg.com/vi/XEkn51A2Bhw/mqdefault.jpg" alt="LEARN FRENCH with : 2 mules for sister Sara part1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1867" title="LEARN FRENCH with : 2 mules for sister Sara part1">LEARN FRENCH with : 2 mules for sister Sara part1</a></td>
+      <td>00:01:48</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1867" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1868</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1868" title="LEARN FRENCH WITH JAMES BOND vs Dr No (original version)"><img width="100px" src="https://i.ytimg.com/vi/dNBozK9n7Z4/mqdefault.jpg" alt="LEARN FRENCH WITH JAMES BOND vs Dr No (original version)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1868" title="LEARN FRENCH WITH JAMES BOND vs Dr No (original version)">LEARN FRENCH WITH JAMES BOND vs Dr No (original version)</a></td>
+      <td>00:02:17</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1868" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1869</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1869" title="LEARN FRENCH WITH 007 ( James Bond vs Dr No ) french dub"><img width="100px" src="https://i.ytimg.com/vi/bEo1PxpwjoM/mqdefault.jpg" alt="LEARN FRENCH WITH 007 ( James Bond vs Dr No ) french dub"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1869" title="LEARN FRENCH WITH 007 ( James Bond vs Dr No ) french dub">LEARN FRENCH WITH 007 ( James Bond vs Dr No ) french dub</a></td>
+      <td>00:02:25</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1869" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1870</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1870" title="LEARN FRENCH WITH A MOVIE : From Paris with love"><img width="100px" src="https://i.ytimg.com/vi/D7CLeOYolWs/mqdefault.jpg" alt="LEARN FRENCH WITH A MOVIE : From Paris with love"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1870" title="LEARN FRENCH WITH A MOVIE : From Paris with love">LEARN FRENCH WITH A MOVIE : From Paris with love</a></td>
+      <td>00:02:04</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1870" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1871</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1871" title="FRENCH LESSON - LEARN FRENCH WITH MOVIES ( & subtitles ) : Inglorious basterds"><img width="100px" src="https://i.ytimg.com/vi/XkOEacR6Vjc/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH MOVIES ( & subtitles ) : Inglorious basterds"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1871" title="FRENCH LESSON - LEARN FRENCH WITH MOVIES ( & subtitles ) : Inglorious basterds">FRENCH LESSON - LEARN FRENCH WITH MOVIES ( & subtitles ) : Inglorious basterds</a></td>
+      <td>00:03:44</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1871" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1872</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1872" title="FRENCH LESSON - LEARN FRENCH WITH : The Shining part1 ( french dub + subtitles )"><img width="100px" src="https://i.ytimg.com/vi/OMLxPyOZIUs/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH : The Shining part1 ( french dub + subtitles )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1872" title="FRENCH LESSON - LEARN FRENCH WITH : The Shining part1 ( french dub + subtitles )">FRENCH LESSON - LEARN FRENCH WITH : The Shining part1 ( french dub + subtitles )</a></td>
+      <td>00:02:54</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1872" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1873</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1873" title="FRENCH LESSON - LEARN FRENCH WITH : The Shining part2 ( french dub + subtitles )"><img width="100px" src="https://i.ytimg.com/vi/dwsvGaStr3g/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH : The Shining part2 ( french dub + subtitles )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1873" title="FRENCH LESSON - LEARN FRENCH WITH : The Shining part2 ( french dub + subtitles )">FRENCH LESSON - LEARN FRENCH WITH : The Shining part2 ( french dub + subtitles )</a></td>
+      <td>00:02:15</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1873" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1874</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1874" title="FRENCH LESSON - LEARN FRENCH WITH  : The Shining part3 ( french dub + subtitles )"><img width="100px" src="https://i.ytimg.com/vi/L4wxvDV5pFk/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH  : The Shining part3 ( french dub + subtitles )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1874" title="FRENCH LESSON - LEARN FRENCH WITH  : The Shining part3 ( french dub + subtitles )">FRENCH LESSON - LEARN FRENCH WITH  : The Shining part3 ( french dub + subtitles )</a></td>
+      <td>00:02:10</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1874" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1875</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1875" title="FRENCH LESSON - LEARN FRENCH WITH : The Shining part4 ( french dub + subtitles )"><img width="100px" src="https://i.ytimg.com/vi/StHUPgZ6jkU/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH : The Shining part4 ( french dub + subtitles )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1875" title="FRENCH LESSON - LEARN FRENCH WITH : The Shining part4 ( french dub + subtitles )">FRENCH LESSON - LEARN FRENCH WITH : The Shining part4 ( french dub + subtitles )</a></td>
+      <td>00:03:14</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1875" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1876</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1876" title="LEARN FRENCH WITH : Star Wars épisode IV part1 ( french dub )"><img width="100px" src="https://i.ytimg.com/vi/bg8abk7Q1Hg/mqdefault.jpg" alt="LEARN FRENCH WITH : Star Wars épisode IV part1 ( french dub )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1876" title="LEARN FRENCH WITH : Star Wars épisode IV part1 ( french dub )">LEARN FRENCH WITH : Star Wars épisode IV part1 ( french dub )</a></td>
+      <td>00:02:17</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1876" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1877</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1877" title="LEARN FRENCH WITH : Star Wars IV part2 ( french dub + subtitles )"><img width="100px" src="https://i.ytimg.com/vi/fmHqdr85buQ/mqdefault.jpg" alt="LEARN FRENCH WITH : Star Wars IV part2 ( french dub + subtitles )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1877" title="LEARN FRENCH WITH : Star Wars IV part2 ( french dub + subtitles )">LEARN FRENCH WITH : Star Wars IV part2 ( french dub + subtitles )</a></td>
+      <td>00:02:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1877" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1878</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1878" title="LEARN FRENCH WITH : Star Wars IV part3 ( french dub + subtitles )"><img width="100px" src="https://i.ytimg.com/vi/A_KRcZ_mVi4/mqdefault.jpg" alt="LEARN FRENCH WITH : Star Wars IV part3 ( french dub + subtitles )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1878" title="LEARN FRENCH WITH : Star Wars IV part3 ( french dub + subtitles )">LEARN FRENCH WITH : Star Wars IV part3 ( french dub + subtitles )</a></td>
+      <td>00:01:35</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1878" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1879</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1879" title="FRENCH LESSON for beginners - french easy vocabulary : Casino Royale"><img width="100px" src="https://i.ytimg.com/vi/UkUqSRLEwm8/mqdefault.jpg" alt="FRENCH LESSON for beginners - french easy vocabulary : Casino Royale"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1879" title="FRENCH LESSON for beginners - french easy vocabulary : Casino Royale">FRENCH LESSON for beginners - french easy vocabulary : Casino Royale</a></td>
+      <td>00:04:24</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1879" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1880</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1880" title="LEARN FRENCH - french lesson with : Captain America vs Batroc"><img width="100px" src="https://i.ytimg.com/vi/sO7-0OKirk0/mqdefault.jpg" alt="LEARN FRENCH - french lesson with : Captain America vs Batroc"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1880" title="LEARN FRENCH - french lesson with : Captain America vs Batroc">LEARN FRENCH - french lesson with : Captain America vs Batroc</a></td>
+      <td>00:01:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1880" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1881</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1881" title="FRENCH LESSON - learn french with Jean Reno & Robert De Niro : RONIN"><img width="100px" src="https://i.ytimg.com/vi/9bk0TQ9wFtk/mqdefault.jpg" alt="FRENCH LESSON - learn french with Jean Reno & Robert De Niro : RONIN"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1881" title="FRENCH LESSON - learn french with Jean Reno & Robert De Niro : RONIN">FRENCH LESSON - learn french with Jean Reno & Robert De Niro : RONIN</a></td>
+      <td>00:02:18</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1881" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1882</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1882" title="FRENCH LESSON - learn french with Ghost Dog part 2"><img width="100px" src="https://i.ytimg.com/vi/X61v_m_Kwjg/mqdefault.jpg" alt="FRENCH LESSON - learn french with Ghost Dog part 2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1882" title="FRENCH LESSON - learn french with Ghost Dog part 2">FRENCH LESSON - learn french with Ghost Dog part 2</a></td>
+      <td>00:02:38</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1882" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1883</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1883" title="FRENCH LESSON - learn french with Ghost Dog"><img width="100px" src="https://i.ytimg.com/vi/G7g4BjQ5LI8/mqdefault.jpg" alt="FRENCH LESSON - learn french with Ghost Dog"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1883" title="FRENCH LESSON - learn french with Ghost Dog">FRENCH LESSON - learn french with Ghost Dog</a></td>
+      <td>00:02:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1883" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1884</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1884" title="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part2 ( french dub )"><img width="100px" src="https://i.ytimg.com/vi/2HzxPCCGQlU/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part2 ( french dub )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1884" title="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part2 ( french dub )">FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part2 ( french dub )</a></td>
+      <td>00:02:51</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1884" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1885</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1885" title="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part3 ( french dub )"><img width="100px" src="https://i.ytimg.com/vi/By2oecCBfvs/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part3 ( french dub )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1885" title="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part3 ( french dub )">FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part3 ( french dub )</a></td>
+      <td>00:02:50</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1885" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1886</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1886" title="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part4 ( french dub )"><img width="100px" src="https://i.ytimg.com/vi/ydskatL1LmM/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part4 ( french dub )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1886" title="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part4 ( french dub )">FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part4 ( french dub )</a></td>
+      <td>00:01:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1886" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1887</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1887" title="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part5 ( french dub )"><img width="100px" src="https://i.ytimg.com/vi/DuKAcA9vqzw/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part5 ( french dub )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1887" title="FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part5 ( french dub )">FRENCH LESSON - LEARN FRENCH WITH JASON BOURNE part5 ( french dub )</a></td>
+      <td>00:02:04</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1887" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1888</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1888" title="FRENCH LESSON - LEARN FRENCH WITH INGLORIOUS BASTERDS"><img width="100px" src="https://i.ytimg.com/vi/zmQRTiiSjK8/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH INGLORIOUS BASTERDS"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1888" title="FRENCH LESSON - LEARN FRENCH WITH INGLORIOUS BASTERDS">FRENCH LESSON - LEARN FRENCH WITH INGLORIOUS BASTERDS</a></td>
+      <td>00:02:01</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1888" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1889</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1889" title="FRENCH LESSON  - LEARN FRENCH WITH HAN SOLO & JABBA ( repost )"><img width="100px" src="https://i.ytimg.com/vi/YZkTOX6J4Ac/mqdefault.jpg" alt="FRENCH LESSON  - LEARN FRENCH WITH HAN SOLO & JABBA ( repost )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1889" title="FRENCH LESSON  - LEARN FRENCH WITH HAN SOLO & JABBA ( repost )">FRENCH LESSON  - LEARN FRENCH WITH HAN SOLO & JABBA ( repost )</a></td>
+      <td>00:01:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1889" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1890</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1890" title="FRENCH LESSON - learn french with the empire strikes back ( french dub ) part1"><img width="100px" src="https://i.ytimg.com/vi/RNqGY_JvBjo/mqdefault.jpg" alt="FRENCH LESSON - learn french with the empire strikes back ( french dub ) part1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1890" title="FRENCH LESSON - learn french with the empire strikes back ( french dub ) part1">FRENCH LESSON - learn french with the empire strikes back ( french dub ) part1</a></td>
+      <td>00:02:47</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1890" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1891</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1891" title="FRENCH LESSON - LEARN FRENCH WITH STAR WARS V ( french dub ) part2"><img width="100px" src="https://i.ytimg.com/vi/uF_MAvutEeA/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH STAR WARS V ( french dub ) part2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1891" title="FRENCH LESSON - LEARN FRENCH WITH STAR WARS V ( french dub ) part2">FRENCH LESSON - LEARN FRENCH WITH STAR WARS V ( french dub ) part2</a></td>
+      <td>00:02:22</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1891" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1892</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1892" title="FRENCH LESSON - LEARN FRENCH WITH STAR WARS V ( french dub ) part3"><img width="100px" src="https://i.ytimg.com/vi/_-H7oGBEI9Y/mqdefault.jpg" alt="FRENCH LESSON - LEARN FRENCH WITH STAR WARS V ( french dub ) part3"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1892" title="FRENCH LESSON - LEARN FRENCH WITH STAR WARS V ( french dub ) part3">FRENCH LESSON - LEARN FRENCH WITH STAR WARS V ( french dub ) part3</a></td>
+      <td>00:03:15</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1892" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1893</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1893" title="FRENCH LESSON - learn french with Star Wars VI part1"><img width="100px" src="https://i.ytimg.com/vi/Tew0DlpAzp0/mqdefault.jpg" alt="FRENCH LESSON - learn french with Star Wars VI part1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1893" title="FRENCH LESSON - learn french with Star Wars VI part1">FRENCH LESSON - learn french with Star Wars VI part1</a></td>
+      <td>00:02:17</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1893" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1894</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1894" title="FRENCH LESSON - learn french with Star Wars VI part2"><img width="100px" src="https://i.ytimg.com/vi/BT1elb4Zorg/mqdefault.jpg" alt="FRENCH LESSON - learn french with Star Wars VI part2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1894" title="FRENCH LESSON - learn french with Star Wars VI part2">FRENCH LESSON - learn french with Star Wars VI part2</a></td>
+      <td>00:02:03</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1894" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1895</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1895" title="FRENCH LESSON - learn french with Star Wars VI part3 ( french dub )"><img width="100px" src="https://i.ytimg.com/vi/kUUtXHmoWJU/mqdefault.jpg" alt="FRENCH LESSON - learn french with Star Wars VI part3 ( french dub )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1895" title="FRENCH LESSON - learn french with Star Wars VI part3 ( french dub )">FRENCH LESSON - learn french with Star Wars VI part3 ( french dub )</a></td>
+      <td>00:02:34</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1895" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1896</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1896" title="FRENCH LESSON - learn french with Star Wars VI part4"><img width="100px" src="https://i.ytimg.com/vi/pFWIJ95DYQI/mqdefault.jpg" alt="FRENCH LESSON - learn french with Star Wars VI part4"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1896" title="FRENCH LESSON - learn french with Star Wars VI part4">FRENCH LESSON - learn french with Star Wars VI part4</a></td>
+      <td>00:02:30</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1896" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1897</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1897" title="FRENCH LESSON - learn french with Star Wars VI part5"><img width="100px" src="https://i.ytimg.com/vi/I2cS0Tg6IeQ/mqdefault.jpg" alt="FRENCH LESSON - learn french with Star Wars VI part5"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1897" title="FRENCH LESSON - learn french with Star Wars VI part5">FRENCH LESSON - learn french with Star Wars VI part5</a></td>
+      <td>00:02:29</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1897" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1898</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1898" title="FRENCH LESSON - learn french with Star Wars VI part6"><img width="100px" src="https://i.ytimg.com/vi/0uPI7Zm85_c/mqdefault.jpg" alt="FRENCH LESSON - learn french with Star Wars VI part6"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1898" title="FRENCH LESSON - learn french with Star Wars VI part6">FRENCH LESSON - learn french with Star Wars VI part6</a></td>
+      <td>00:02:22</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1898" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1899</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1899" title="FRENCH LESSON - learn french with movies - Pulp Fiction french dub"><img width="100px" src="https://i.ytimg.com/vi/JigV3QxRe3w/mqdefault.jpg" alt="FRENCH LESSON - learn french with movies - Pulp Fiction french dub"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1899" title="FRENCH LESSON - learn french with movies - Pulp Fiction french dub">FRENCH LESSON - learn french with movies - Pulp Fiction french dub</a></td>
+      <td>00:02:49</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1899" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>1900</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=1900" title="FRENCH LESSON - learn french with movies ( Magneto  X-men first class )"><img width="100px" src="https://i.ytimg.com/vi/Ii855-E9Uhk/mqdefault.jpg" alt="FRENCH LESSON - learn french with movies ( Magneto  X-men first class )"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=1900" title="FRENCH LESSON - learn french with movies ( Magneto  X-men first class )">FRENCH LESSON - learn french with movies ( Magneto  X-men first class )</a></td>
+      <td>00:02:21</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL8aS91uAe39eng9BIUZ77rJjL41_9l2HH" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=1900" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

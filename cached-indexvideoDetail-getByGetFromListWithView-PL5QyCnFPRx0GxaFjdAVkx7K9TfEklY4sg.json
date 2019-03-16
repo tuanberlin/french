@@ -1,0 +1,416 @@
+  <html>
+<head>
+      <title>Videos by List PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+      </div>
+  </div>
+
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+</div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 Watched (1)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 New Videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Beginner (17)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Listening (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Grammar (29)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulary (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Reading (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Writing (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciation (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Speaking (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exams (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 German Songs (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 German Film (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 German for Kids (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=15> 15 DSH Exams (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Study in Germany (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 Life in Germany (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numbers (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Shopping (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Food (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Health (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Weather (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=24> 24 Music (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=25> 25 Top playlist (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=26> 26 Tip learn German (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=27> 27 Conversation (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 Travel (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 Advance (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 Course (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 Story (14)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 New Videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 Watched (1)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Shopping (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 Course (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Study in Germany (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numbers (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Weather (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Reading (7)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Grammar (29)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Beginner (17)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulary (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 German Film (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Listening (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 Advance (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 Story (14)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Food (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 Travel (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Writing (12)</a></div>
+</div>
+<br/>
+<a title='Có 1 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 watched L(1)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(5)</a> |<a title='Có 17 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(17)</a> |<a title='Có 15 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(15)</a> |<a title='Có 29 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(29)</a> |<a title='Có 16 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(16)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(7)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(12)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(12)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(11)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(9)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(8)</a> |<a title='Có 16 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(16)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=15> 15 dshexams L(9)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(6)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 life L(11)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(6)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(4)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(13)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(6)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(11)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 funny L(6)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=24> 24 removeads L(9)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=25> 25 top-playlist L(12)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=26> 26 tip-learn-german L(10)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=27> 27 conversation L(7)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 travel L(13)</a> |<a title='Có 15 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 advance L(15)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 course L(5)</a> |<a title='Có 14 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 story L(14)</a> |<br/>Số lượng Videos trong DB: 5929 Videos<br/>Số lượng Videos trong DB: 324 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>7173</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7173" title="German Lesson (1) - 15 Words for ABSOLUTE BEGINNERS - A1"><img width="100px" src="https://i.ytimg.com/vi/GwBfUzPCiaw/mqdefault.jpg" alt="German Lesson (1) - 15 Words for ABSOLUTE BEGINNERS - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7173" title="German Lesson (1) - 15 Words for ABSOLUTE BEGINNERS - A1">German Lesson (1) - 15 Words for ABSOLUTE BEGINNERS - A1</a></td>
+      <td>00:06:26</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7173" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7175</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7175" title="German Lesson (3) - The ABC - A1"><img width="100px" src="https://i.ytimg.com/vi/uCsO0XExI2Y/mqdefault.jpg" alt="German Lesson (3) - The ABC - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7175" title="German Lesson (3) - The ABC - A1">German Lesson (3) - The ABC - A1</a></td>
+      <td>00:05:35</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7175" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7178</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7178" title="German Lesson (6) - Asking Questions with Regular Verbs - A1"><img width="100px" src="https://i.ytimg.com/vi/R4E9vLFjO7M/mqdefault.jpg" alt="German Lesson (6) - Asking Questions with Regular Verbs - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7178" title="German Lesson (6) - Asking Questions with Regular Verbs - A1">German Lesson (6) - Asking Questions with Regular Verbs - A1</a></td>
+      <td>00:04:39</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7178" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7179</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7179" title="German Lesson (7) - 15 Useful Phrases for Absolute Beginners - A1"><img width="100px" src="https://i.ytimg.com/vi/2ffqUo97C_0/mqdefault.jpg" alt="German Lesson (7) - 15 Useful Phrases for Absolute Beginners - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7179" title="German Lesson (7) - 15 Useful Phrases for Absolute Beginners - A1">German Lesson (7) - 15 Useful Phrases for Absolute Beginners - A1</a></td>
+      <td>00:03:43</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7179" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7180</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7180" title="German Lesson (8) - Talking About Your Profession - A1"><img width="100px" src="https://i.ytimg.com/vi/G63cDcAXqQc/mqdefault.jpg" alt="German Lesson (8) - Talking About Your Profession - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7180" title="German Lesson (8) - Talking About Your Profession - A1">German Lesson (8) - Talking About Your Profession - A1</a></td>
+      <td>00:07:23</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7180" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7181</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7181" title="German Lesson (9) - Mini Dialogues - Listening Comprehension - A1"><img width="100px" src="https://i.ytimg.com/vi/KHOrpBYS-c4/mqdefault.jpg" alt="German Lesson (9) - Mini Dialogues - Listening Comprehension - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7181" title="German Lesson (9) - Mini Dialogues - Listening Comprehension - A1">German Lesson (9) - Mini Dialogues - Listening Comprehension - A1</a></td>
+      <td>00:05:29</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7181" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7182</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7182" title="German Lesson (10) - Beginner Phrases - Das ist/Das sind - A1"><img width="100px" src="https://i.ytimg.com/vi/mQIUBsvakyc/mqdefault.jpg" alt="German Lesson (10) - Beginner Phrases - Das ist/Das sind - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7182" title="German Lesson (10) - Beginner Phrases - Das ist/Das sind - A1">German Lesson (10) - Beginner Phrases - Das ist/Das sind - A1</a></td>
+      <td>00:07:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7182" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7184</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7184" title="German Lesson (12) - Dogs - A1"><img width="100px" src="https://i.ytimg.com/vi/FGFz08E8vVs/mqdefault.jpg" alt="German Lesson (12) - Dogs - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7184" title="German Lesson (12) - Dogs - A1">German Lesson (12) - Dogs - A1</a></td>
+      <td>00:01:43</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7184" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7185</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7185" title="German Lesson (13) - The Days of the Week - A1"><img width="100px" src="https://i.ytimg.com/vi/x-4HVdk_A2M/mqdefault.jpg" alt="German Lesson (13) - The Days of the Week - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7185" title="German Lesson (13) - The Days of the Week - A1">German Lesson (13) - The Days of the Week - A1</a></td>
+      <td>00:01:27</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7185" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7186</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7186" title="German Lesson (14) - Household and Electronic Appliances - A1"><img width="100px" src="https://i.ytimg.com/vi/diNqNSWsZp8/mqdefault.jpg" alt="German Lesson (14) - Household and Electronic Appliances - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7186" title="German Lesson (14) - Household and Electronic Appliances - A1">German Lesson (14) - Household and Electronic Appliances - A1</a></td>
+      <td>00:03:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7186" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7187</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7187" title="German Lesson (15) - Numbers from 1-20 - A1"><img width="100px" src="https://i.ytimg.com/vi/JoMqhdYcgZ4/mqdefault.jpg" alt="German Lesson (15) - Numbers from 1-20 - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7187" title="German Lesson (15) - Numbers from 1-20 - A1">German Lesson (15) - Numbers from 1-20 - A1</a></td>
+      <td>00:04:06</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7187" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7188</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7188" title="German Lesson (16) - Rooms in a House - A1"><img width="100px" src="https://i.ytimg.com/vi/XJJ0jmkOBxE/mqdefault.jpg" alt="German Lesson (16) - Rooms in a House - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7188" title="German Lesson (16) - Rooms in a House - A1">German Lesson (16) - Rooms in a House - A1</a></td>
+      <td>00:02:41</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7188" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7189</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7189" title="German Lesson (17) - 25 Ways to Say Goodbye - A1"><img width="100px" src="https://i.ytimg.com/vi/-7I8xJcYFHY/mqdefault.jpg" alt="German Lesson (17) - 25 Ways to Say Goodbye - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7189" title="German Lesson (17) - 25 Ways to Say Goodbye - A1">German Lesson (17) - 25 Ways to Say Goodbye - A1</a></td>
+      <td>00:03:59</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7189" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7192</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7192" title="German Lesson (20) - The Body Parts - A1"><img width="100px" src="https://i.ytimg.com/vi/Oz1A_jGQUz0/mqdefault.jpg" alt="German Lesson (20) - The Body Parts - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7192" title="German Lesson (20) - The Body Parts - A1">German Lesson (20) - The Body Parts - A1</a></td>
+      <td>00:03:12</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7192" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7199</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7199" title="German Lesson (27) - Definite Articles - der - A1"><img width="100px" src="https://i.ytimg.com/vi/S8CXX6T0H5Q/mqdefault.jpg" alt="German Lesson (27) - Definite Articles - der - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7199" title="German Lesson (27) - Definite Articles - der - A1">German Lesson (27) - Definite Articles - der - A1</a></td>
+      <td>00:04:19</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7199" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7200</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7200" title="German Lesson (28) - Definite Articles - die - A1"><img width="100px" src="https://i.ytimg.com/vi/wVBfXJaHpp0/mqdefault.jpg" alt="German Lesson (28) - Definite Articles - die - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7200" title="German Lesson (28) - Definite Articles - die - A1">German Lesson (28) - Definite Articles - die - A1</a></td>
+      <td>00:03:54</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7200" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7201</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7201" title="German Lesson  (29) - Definite Articles - das - A1"><img width="100px" src="https://i.ytimg.com/vi/fOZnwGzmFD4/mqdefault.jpg" alt="German Lesson  (29) - Definite Articles - das - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7201" title="German Lesson  (29) - Definite Articles - das - A1">German Lesson  (29) - Definite Articles - das - A1</a></td>
+      <td>00:03:43</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7201" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7212</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7212" title="German Lesson (40) - German for Beginners - Surviving in Germany - A1"><img width="100px" src="https://i.ytimg.com/vi/gUilpr9iBMY/mqdefault.jpg" alt="German Lesson (40) - German for Beginners - Surviving in Germany - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7212" title="German Lesson (40) - German for Beginners - Surviving in Germany - A1">German Lesson (40) - German for Beginners - Surviving in Germany - A1</a></td>
+      <td>00:12:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7212" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7213</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7213" title="German Lesson (41) - How to Say Happy Birthday in German - A1"><img width="100px" src="https://i.ytimg.com/vi/D8MycZP28Pg/mqdefault.jpg" alt="German Lesson (41) - How to Say Happy Birthday in German - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7213" title="German Lesson (41) - How to Say Happy Birthday in German - A1">German Lesson (41) - How to Say Happy Birthday in German - A1</a></td>
+      <td>00:04:42</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7213" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7214</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7214" title="German Lesson (42) - Summer Vocabulary - A1/A2"><img width="100px" src="https://i.ytimg.com/vi/xx6fekcgwZE/mqdefault.jpg" alt="German Lesson (42) - Summer Vocabulary - A1/A2"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7214" title="German Lesson (42) - Summer Vocabulary - A1/A2">German Lesson (42) - Summer Vocabulary - A1/A2</a></td>
+      <td>00:04:55</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7214" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7218</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7218" title="German Lesson (46) - Start Deutsch 1 Oral Exam - Part 1 - Goethe Institute - Prep - A1"><img width="100px" src="https://i.ytimg.com/vi/mWulBPaDzcs/mqdefault.jpg" alt="German Lesson (46) - Start Deutsch 1 Oral Exam - Part 1 - Goethe Institute - Prep - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7218" title="German Lesson (46) - Start Deutsch 1 Oral Exam - Part 1 - Goethe Institute - Prep - A1">German Lesson (46) - Start Deutsch 1 Oral Exam - Part 1 - Goethe Institute - Prep - A1</a></td>
+      <td>00:06:08</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7218" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>7219</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=7219" title="German Lesson (47) - Start Deutsch 1 Oral Exam - Part 2 - Goethe Institute - Prep - A1"><img width="100px" src="https://i.ytimg.com/vi/k5zhX1JHjDw/mqdefault.jpg" alt="German Lesson (47) - Start Deutsch 1 Oral Exam - Part 2 - Goethe Institute - Prep - A1"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=7219" title="German Lesson (47) - Start Deutsch 1 Oral Exam - Part 2 - Goethe Institute - Prep - A1">German Lesson (47) - Start Deutsch 1 Oral Exam - Part 2 - Goethe Institute - Prep - A1</a></td>
+      <td>00:03:12</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PL5QyCnFPRx0GxaFjdAVkx7K9TfEklY4sg" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=7219" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>

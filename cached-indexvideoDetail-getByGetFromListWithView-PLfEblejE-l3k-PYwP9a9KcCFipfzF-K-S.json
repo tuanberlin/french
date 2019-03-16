@@ -1,0 +1,676 @@
+  <html>
+<head>
+      <title>Videos by List PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S</title>
+
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="https://www.w3schools.com/tags/demo_icon.gif" type="image/gif" sizes="16x16">
+<link rel="stylesheet" type="text/css" href="views/videoDetail/mystyle.css">
+  <!-- Bootstrap v4.x stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<!-- bootstrap css theme -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/bootstrap-v4.min.css">
+
+	<script src="https://mottie.github.io/tablesorter/docs/js/jquery-latest.min.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+	<script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+	<!-- pager plugin -->
+	<link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css">
+	<script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+	<style>
+	.tablesorter-pager .btn-group-sm .btn {
+	  font-size: 1.2em; /* make pager arrows more visible */
+	}
+	</style>
+  <script>
+  $(function() {
+
+  $("table").tablesorter({
+    theme : "bootstrap",
+
+    widthFixed: true,
+
+    // widget code contained in the jquery.tablesorter.widgets.js file
+    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
+    // the uitheme widget is NOT REQUIRED!
+    widgets : [ "filter", "columns", "zebra" ],
+
+    widgetOptions : {
+      // using the default zebra striping class name, so it actually isn't included in the theme variable above
+      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+      zebra : ["even", "odd"],
+
+      // class names added to columns when sorted
+      columns: [ "primary", "secondary", "tertiary" ],
+
+      // reset filters button
+      filter_reset : ".reset",
+
+      // extra css class name (string or array) added to the filter element (input or select)
+      filter_cssFilter: [
+        'form-control',
+        'form-control',
+        'form-control custom-select', // select needs custom class names :(
+        'form-control',
+        'form-control',
+        'form-control',
+        'form-control'
+      ]
+
+    }
+  })
+  .tablesorterPager({
+
+    // target the pager markup - see the HTML block below
+    container: $(".ts-pager"),
+
+    // target the pager page select dropdown - choose a page
+    cssGoto  : ".pagenum",
+
+    // remove rows from the table to speed up the sort of large tables.
+    // setting this to false, only hides the non-visible rows; needed if you plan to add/remove rows with the pager enabled.
+    removeRows: false,
+
+    // output string - default is '{page}/{totalPages}';
+    // possible variables: {page}, {totalPages}, {filteredPages}, {startRow}, {endRow}, {filteredRows} and {totalRows}
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+
+  });
+
+});
+  </script></head>
+<body>
+
+<div class="contentItem">
+	<div class="dropdown">
+       <a href="/v2/admin/"><button class="dropbtn">Home page</button></a>
+       <div class="dropdown-content">
+          <a href="?c=listDetail&a=getAllWithView&k=1">get All ListDetail</a>
+          <a title="Them list videos moi" target="_blank" href="youtube/">Add New</a>
+          <a title="Xoa trung lap video + listDetail" target="_blank" href="removeDuplicate.php">Remove Duplicate</a>
+          <a title="Them list videos moi" target="_blank" href="/v2/log/show.php">Log</a>
+      </div>
+  </div>
+  <div class="dropdown">
+   <a title="Them list videos moi" target="_blank" href="youtube/"><button class="dropbtn">Add New By Youtube</button></a>
+  </div>
+
+<div class="dropdown">
+   <a title="Tao Cache + remove cac videos va list bi trung lap" target="_blank" href="gen-cache.php"><button class="dropbtn">Gen cache</button></a>
+
+   <div class="dropdown-content">
+    <a title="Check videos playable, Khong nen thuc hien nhieu neu ko se bi khoa IP. Tuy vao DB co the chay mat 15p hoac hon" target="_blank" href="check-videos.php">Check Video playable(co the phai doi >15p)</a>
+</div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">get All VideosDetail</button>
+   <div class="dropdown-content">
+      <a href="?c=videoDetail&a=getAllWithView&k=0">get All VideosDetail(>10s)</a>
+      <a href="#">Add New</a>
+      <a href="#">Remove</a>
+  </div>
+</div>
+<div class="dropdown">
+   <button class="dropbtn">Xep theo CategoryID</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 Watched (1)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 New Videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Beginner (17)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Listening (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Grammar (29)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulary (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 Reading (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Writing (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciation (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 Speaking (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 Exams (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 German Songs (8)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 German Film (24)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 German for Kids (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=15> 15 DSH Exams (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Study in Germany (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 Life in Germany (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numbers (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Shopping (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Food (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 Health (11)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Weather (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=24> 24 Music (9)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=25> 25 Top playlist (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=26> 26 Tip learn German (10)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=27> 27 Conversation (7)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 Travel (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 Advance (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 Course (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 Story (14)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List tang dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 New Videos (0)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 Watched (1)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 Shopping (4)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 News (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 Food (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 Course (5)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 Study in Germany (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 Numbers (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 Jobs (6)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 Weather (6)</a></div>
+</div>
+
+<div class="dropdown">
+   <button class="dropbtn">Xep theo so luong List giam dan</button>
+   <div class="dropdown-content">
+      <a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 Grammar (29)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 German Film (24)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 Beginner (17)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 Vocabulary (16)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 Listening (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 Advance (15)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 Story (14)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 Travel (13)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 Writing (12)</a><a href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 Pronunciation (12)</a></div>
+</div>
+<br/>
+<a title='Có 1 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=0> 0 watched L(1)</a> |<a title='Có 0 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=1> 1 new_videos L(0)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=2> 2 nachrichten L(5)</a> |<a title='Có 17 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=3> 3 beginnners L(17)</a> |<a title='Có 15 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=4> 4 listening L(15)</a> |<a title='Có 29 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=5> 5 gramar L(29)</a> |<a title='Có 16 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=6> 6 vocabulary L(16)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=7> 7 reading L(7)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=8> 8 writing L(12)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=9> 9 pronunciation L(12)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=10> 10 speaking L(11)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=11> 11 exams L(9)</a> |<a title='Có 8 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=12> 12 songs L(8)</a> |<a title='Có 24 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=13> 13 film L(24)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=14> 14 kids L(9)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=15> 15 dshexams L(9)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=16> 16 study L(6)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=17> 17 life L(11)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=18> 18 numbers L(6)</a> |<a title='Có 4 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=19> 19 shopping L(4)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=20> 20 food L(5)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=21> 21 jobs L(6)</a> |<a title='Có 11 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=22> 22 health L(11)</a> |<a title='Có 6 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=23> 23 funny L(6)</a> |<a title='Có 9 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=24> 24 removeads L(9)</a> |<a title='Có 12 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=25> 25 top-playlist L(12)</a> |<a title='Có 10 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=26> 26 tip-learn-german L(10)</a> |<a title='Có 7 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=27> 27 conversation L(7)</a> |<a title='Có 13 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=28> 28 travel L(13)</a> |<a title='Có 15 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=29> 29 advance L(15)</a> |<a title='Có 5 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=30> 30 course L(5)</a> |<a title='Có 14 list trong category nay 'href=?c=listDetail&a=getByCategoryIDWithCountWithView&k=31> 31 story L(14)</a> |<br/>Số lượng Videos trong DB: 6126 Videos<br/>Số lượng Videos trong DB: 324 Videos</div>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kw" value="" placeholder="search here">
+	<input type="submit" name="submit" value="search name videos">
+</form>
+
+
+<form method="get" style="margin-left: 100px;" >
+	<input type="text" name="kwl" value="" placeholder="search name List here">
+	<input type="submit" name="submit" value="search name List videos">
+</form><br/>
+<h1>Tat ca video co trong co so du lieu</h1>
+
+
+<table class="table table-bordered table-striped">
+  <thead> <!-- add class="thead-inverse" for a dark header -->
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video count</th>
+      <th>Add too</th>
+      <th>Xoa</th>
+	</tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>stt</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Video Duration</th>
+      <th>Add Videos to the List</th>
+      <th>Xoa</th>
+    </tr>
+    <tr>
+      <th colspan="7" class="ts-pager">
+        <div class="form-inline">
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary first" title="first">⇤</button>
+            <button type="button" class="btn btn-secondary prev" title="previous">←</button>
+          </div>
+          <span class="pagedisplay"></span>
+          <div class="btn-group btn-group-sm mx-1" role="group">
+            <button type="button" class="btn btn-secondary next" title="next">→</button>
+            <button type="button" class="btn btn-secondary last" title="last">⇥</button>
+          </div>
+          <select class="form-control-sm custom-select px-1 pagesize" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="all">All Rows</option>
+          </select>
+          <select class="form-control-sm custom-select px-4 mx-1 pagenum" title="Select page number"></select>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+	
+   <tr>
+      <td>13115</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13115" title="Street Warrior - Fight for Survival (Action in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/-JOpx-KzBsc/mqdefault.jpg" alt="Street Warrior - Fight for Survival (Action in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13115" title="Street Warrior - Fight for Survival (Action in voller Länge)">Street Warrior - Fight for Survival (Action in voller Länge)</a></td>
+      <td>01:30:38</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13115" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13116</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13116" title="Smuggler (Action, Drama in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/EZEWtll51Bg/mqdefault.jpg" alt="Smuggler (Action, Drama in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13116" title="Smuggler (Action, Drama in voller Länge)">Smuggler (Action, Drama in voller Länge)</a></td>
+      <td>01:37:47</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13116" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13117</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13117" title="Eternal Blood (Horrorfilm, Vampirfilm, Gothic) Ganzer Spielfilm in Deutsch *legal ganze filme sehen*"><img width="100px" src="https://i.ytimg.com/vi/Z63O-vxIIyk/mqdefault.jpg" alt="Eternal Blood (Horrorfilm, Vampirfilm, Gothic) Ganzer Spielfilm in Deutsch *legal ganze filme sehen*"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13117" title="Eternal Blood (Horrorfilm, Vampirfilm, Gothic) Ganzer Spielfilm in Deutsch *legal ganze filme sehen*">Eternal Blood (Horrorfilm, Vampirfilm, Gothic) Ganzer Spielfilm in Deutsch *legal ganze filme sehen*</a></td>
+      <td>01:47:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13117" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13118</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13118" title="Bad Blood (Martial Arts Spielfilm in voller Länge, ab 18, deutsch) *legal ganze filme schauen*"><img width="100px" src="https://i.ytimg.com/vi/uh_rkpSnTXc/mqdefault.jpg" alt="Bad Blood (Martial Arts Spielfilm in voller Länge, ab 18, deutsch) *legal ganze filme schauen*"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13118" title="Bad Blood (Martial Arts Spielfilm in voller Länge, ab 18, deutsch) *legal ganze filme schauen*">Bad Blood (Martial Arts Spielfilm in voller Länge, ab 18, deutsch) *legal ganze filme schauen*</a></td>
+      <td>01:31:08</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13118" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13119</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13119" title="Baby - Live fast, kill young (Action, Thriller in voller Länge, ganze Filme auf Deutsch schauen)"><img width="100px" src="https://i.ytimg.com/vi/C5Mm3HJK7BE/mqdefault.jpg" alt="Baby - Live fast, kill young (Action, Thriller in voller Länge, ganze Filme auf Deutsch schauen)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13119" title="Baby - Live fast, kill young (Action, Thriller in voller Länge, ganze Filme auf Deutsch schauen)">Baby - Live fast, kill young (Action, Thriller in voller Länge, ganze Filme auf Deutsch schauen)</a></td>
+      <td>01:36:04</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13119" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13120</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13120" title="Parkour (Psychodrama, Actionfilm in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/6rgsw1mCx_M/mqdefault.jpg" alt="Parkour (Psychodrama, Actionfilm in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13120" title="Parkour (Psychodrama, Actionfilm in voller Länge)">Parkour (Psychodrama, Actionfilm in voller Länge)</a></td>
+      <td>01:36:25</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13120" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13121</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13121" title="Savage - At the End of All Humanity (Action, Drama in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/PygpfgfyB0Y/mqdefault.jpg" alt="Savage - At the End of All Humanity (Action, Drama in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13121" title="Savage - At the End of All Humanity (Action, Drama in voller Länge)">Savage - At the End of All Humanity (Action, Drama in voller Länge)</a></td>
+      <td>01:27:24</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13121" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13122</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13122" title="Tokyo Zombie (Action, Komödie, ganzer Film)"><img width="100px" src="https://i.ytimg.com/vi/bXJAzlTbkQY/mqdefault.jpg" alt="Tokyo Zombie (Action, Komödie, ganzer Film)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13122" title="Tokyo Zombie (Action, Komödie, ganzer Film)">Tokyo Zombie (Action, Komödie, ganzer Film)</a></td>
+      <td>01:44:14</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13122" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13123</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13123" title="Vares - Private Eye (Action, Thriller in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/80SGnU4WGpg/mqdefault.jpg" alt="Vares - Private Eye (Action, Thriller in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13123" title="Vares - Private Eye (Action, Thriller in voller Länge)">Vares - Private Eye (Action, Thriller in voller Länge)</a></td>
+      <td>01:31:05</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13123" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13124</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13124" title="Drive (Action in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/JiyoNpDixkM/mqdefault.jpg" alt="Drive (Action in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13124" title="Drive (Action in voller Länge)">Drive (Action in voller Länge)</a></td>
+      <td>01:41:13</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13124" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13125</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13125" title="Banshee - Extreme Fast, Extreme Furious (Action, ganzer Film)"><img width="100px" src="https://i.ytimg.com/vi/xmUDsOTfyug/mqdefault.jpg" alt="Banshee - Extreme Fast, Extreme Furious (Action, ganzer Film)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13125" title="Banshee - Extreme Fast, Extreme Furious (Action, ganzer Film)">Banshee - Extreme Fast, Extreme Furious (Action, ganzer Film)</a></td>
+      <td>01:31:16</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13125" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13127</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13127" title="Claang - Tod den Gladiatoren (Action Spielfilme auf deutsch anschauen in ganzer Länge, Abenteuer)"><img width="100px" src="https://i.ytimg.com/vi/9K27gPMfbso/mqdefault.jpg" alt="Claang - Tod den Gladiatoren (Action Spielfilme auf deutsch anschauen in ganzer Länge, Abenteuer)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13127" title="Claang - Tod den Gladiatoren (Action Spielfilme auf deutsch anschauen in ganzer Länge, Abenteuer)">Claang - Tod den Gladiatoren (Action Spielfilme auf deutsch anschauen in ganzer Länge, Abenteuer)</a></td>
+      <td>01:40:15</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13127" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13128</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13128" title="Lord of the Elves - Das Zeitalter der Halblinge (Action, Abenteuer in ganzer Länge) *HD*"><img width="100px" src="https://i.ytimg.com/vi/2gH_CpszwSI/mqdefault.jpg" alt="Lord of the Elves - Das Zeitalter der Halblinge (Action, Abenteuer in ganzer Länge) *HD*"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13128" title="Lord of the Elves - Das Zeitalter der Halblinge (Action, Abenteuer in ganzer Länge) *HD*">Lord of the Elves - Das Zeitalter der Halblinge (Action, Abenteuer in ganzer Länge) *HD*</a></td>
+      <td>01:23:38</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13128" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13129</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13129" title="Cats Eye (Action, Komödie in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/wtsrpF5BhwU/mqdefault.jpg" alt="Cats Eye (Action, Komödie in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13129" title="Cats Eye (Action, Komödie in voller Länge)">Cats Eye (Action, Komödie in voller Länge)</a></td>
+      <td>00:01:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13129" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13130</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13130" title="1942 - Paranormal War (Action, Horror in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/DKNsmBYC4kI/mqdefault.jpg" alt="1942 - Paranormal War (Action, Horror in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13130" title="1942 - Paranormal War (Action, Horror in ganzer Länge)">1942 - Paranormal War (Action, Horror in ganzer Länge)</a></td>
+      <td>01:24:10</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13130" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13131</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13131" title="Game Time - Hier werden Legenden gemacht (Actionfilm in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/agCHBDEJubQ/mqdefault.jpg" alt="Game Time - Hier werden Legenden gemacht (Actionfilm in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13131" title="Game Time - Hier werden Legenden gemacht (Actionfilm in ganzer Länge)">Game Time - Hier werden Legenden gemacht (Actionfilm in ganzer Länge)</a></td>
+      <td>01:36:49</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13131" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13132</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13132" title="John Wayne - Hurricane Express (Action, Abenteuer in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/-GcNAQoYAN8/mqdefault.jpg" alt="John Wayne - Hurricane Express (Action, Abenteuer in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13132" title="John Wayne - Hurricane Express (Action, Abenteuer in ganzer Länge)">John Wayne - Hurricane Express (Action, Abenteuer in ganzer Länge)</a></td>
+      <td>03:01:46</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13132" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13133</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13133" title="Russian Transporter (Action in ganzer Länge) *HD*"><img width="100px" src="https://i.ytimg.com/vi/TglaNz9KY4o/mqdefault.jpg" alt="Russian Transporter (Action in ganzer Länge) *HD*"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13133" title="Russian Transporter (Action in ganzer Länge) *HD*">Russian Transporter (Action in ganzer Länge) *HD*</a></td>
+      <td>01:42:39</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13133" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13134</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13134" title="Jackie Chan - Kung Fu Master (Action, Komödie in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/ASYvBcJ97Vw/mqdefault.jpg" alt="Jackie Chan - Kung Fu Master (Action, Komödie in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13134" title="Jackie Chan - Kung Fu Master (Action, Komödie in voller Länge)">Jackie Chan - Kung Fu Master (Action, Komödie in voller Länge)</a></td>
+      <td>01:24:23</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13134" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13135</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13135" title="Bruce Lee - Das Geheimnis der Grünen Hornisse (Action Spielfilm in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/Wu0E8SVNWb8/mqdefault.jpg" alt="Bruce Lee - Das Geheimnis der Grünen Hornisse (Action Spielfilm in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13135" title="Bruce Lee - Das Geheimnis der Grünen Hornisse (Action Spielfilm in ganzer Länge)">Bruce Lee - Das Geheimnis der Grünen Hornisse (Action Spielfilm in ganzer Länge)</a></td>
+      <td>01:20:07</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13135" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13136</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13136" title="AXE - Killer Biker Gang (Action, Thriller in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/PC4jtzXhzxQ/mqdefault.jpg" alt="AXE - Killer Biker Gang (Action, Thriller in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13136" title="AXE - Killer Biker Gang (Action, Thriller in ganzer Länge)">AXE - Killer Biker Gang (Action, Thriller in ganzer Länge)</a></td>
+      <td>01:28:25</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13136" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13137</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13137" title="Todeskommando Russland 5 - Die Heldenkompanie (Action, Drama in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/LGuat1f-W50/mqdefault.jpg" alt="Todeskommando Russland 5 - Die Heldenkompanie (Action, Drama in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13137" title="Todeskommando Russland 5 - Die Heldenkompanie (Action, Drama in ganzer Länge)">Todeskommando Russland 5 - Die Heldenkompanie (Action, Drama in ganzer Länge)</a></td>
+      <td>01:35:03</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13137" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13138</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13138" title="Todeskommando Russland 6 (Action, Kriegsfilm in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/6qEmyDXwZyE/mqdefault.jpg" alt="Todeskommando Russland 6 (Action, Kriegsfilm in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13138" title="Todeskommando Russland 6 (Action, Kriegsfilm in ganzer Länge)">Todeskommando Russland 6 (Action, Kriegsfilm in ganzer Länge)</a></td>
+      <td>01:41:58</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13138" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13139</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13139" title="Pimp Bullies - Opfer eines Bordells (Action, Thriller in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/B5RYkY4A95o/mqdefault.jpg" alt="Pimp Bullies - Opfer eines Bordells (Action, Thriller in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13139" title="Pimp Bullies - Opfer eines Bordells (Action, Thriller in ganzer Länge)">Pimp Bullies - Opfer eines Bordells (Action, Thriller in ganzer Länge)</a></td>
+      <td>01:18:26</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13139" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13140</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13140" title="Die tollen Hunde der Karibik (Action, Abenteuer in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/kxCZ6-RY4yY/mqdefault.jpg" alt="Die tollen Hunde der Karibik (Action, Abenteuer in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13140" title="Die tollen Hunde der Karibik (Action, Abenteuer in ganzer Länge)">Die tollen Hunde der Karibik (Action, Abenteuer in ganzer Länge)</a></td>
+      <td>01:24:12</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13140" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13141</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13141" title="The Colombian Connection (Action mit Tom Sizemore in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/7Ca_fOHxQOQ/mqdefault.jpg" alt="The Colombian Connection (Action mit Tom Sizemore in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13141" title="The Colombian Connection (Action mit Tom Sizemore in ganzer Länge)">The Colombian Connection (Action mit Tom Sizemore in ganzer Länge)</a></td>
+      <td>01:35:19</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13141" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13142</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13142" title="Attack of the Yakuza - Broken Path (Action in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/F7YvdE6O0lQ/mqdefault.jpg" alt="Attack of the Yakuza - Broken Path (Action in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13142" title="Attack of the Yakuza - Broken Path (Action in voller Länge)">Attack of the Yakuza - Broken Path (Action in voller Länge)</a></td>
+      <td>01:28:58</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13142" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13143</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13143" title="War Unleashed - The Mercenary (Action mit Danny Trejo in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/ChiUVwJaaoo/mqdefault.jpg" alt="War Unleashed - The Mercenary (Action mit Danny Trejo in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13143" title="War Unleashed - The Mercenary (Action mit Danny Trejo in ganzer Länge)">War Unleashed - The Mercenary (Action mit Danny Trejo in ganzer Länge)</a></td>
+      <td>01:28:51</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13143" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13144</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13144" title="Rape & Revenge (Action, Thriller in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/g0UKnK5VlbA/mqdefault.jpg" alt="Rape & Revenge (Action, Thriller in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13144" title="Rape & Revenge (Action, Thriller in ganzer Länge)">Rape & Revenge (Action, Thriller in ganzer Länge)</a></td>
+      <td>01:26:57</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13144" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13145</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13145" title="Lorelei I-507 - Deutsche Wunderwaffe im Pazifik (Action, Sci-Fi in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/vTqEwOGHqTw/mqdefault.jpg" alt="Lorelei I-507 - Deutsche Wunderwaffe im Pazifik (Action, Sci-Fi in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13145" title="Lorelei I-507 - Deutsche Wunderwaffe im Pazifik (Action, Sci-Fi in ganzer Länge)">Lorelei I-507 - Deutsche Wunderwaffe im Pazifik (Action, Sci-Fi in ganzer Länge)</a></td>
+      <td>02:09:03</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13145" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13146</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13146" title="Gunhed (Action, Sci-Fi in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/eB5cWZD9Ids/mqdefault.jpg" alt="Gunhed (Action, Sci-Fi in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13146" title="Gunhed (Action, Sci-Fi in ganzer Länge)">Gunhed (Action, Sci-Fi in ganzer Länge)</a></td>
+      <td>01:32:48</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13146" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13147</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13147" title="White Wall (Action, Sci-Fi in voller Länge, ganzer Film)"><img width="100px" src="https://i.ytimg.com/vi/ztxYPFdw6xE/mqdefault.jpg" alt="White Wall (Action, Sci-Fi in voller Länge, ganzer Film)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13147" title="White Wall (Action, Sci-Fi in voller Länge, ganzer Film)">White Wall (Action, Sci-Fi in voller Länge, ganzer Film)</a></td>
+      <td>01:35:02</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13147" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13148</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13148" title="The Devil Loves RocknRoll (Action, Drama in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/7IXsnRfudoE/mqdefault.jpg" alt="The Devil Loves RocknRoll (Action, Drama in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13148" title="The Devil Loves RocknRoll (Action, Drama in ganzer Länge)">The Devil Loves RocknRoll (Action, Drama in ganzer Länge)</a></td>
+      <td>01:57:08</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13148" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13149</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13149" title="Okinawa - The Last Battle (Action, Kriegsfilm in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/M-NJGlbbFQQ/mqdefault.jpg" alt="Okinawa - The Last Battle (Action, Kriegsfilm in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13149" title="Okinawa - The Last Battle (Action, Kriegsfilm in voller Länge)">Okinawa - The Last Battle (Action, Kriegsfilm in voller Länge)</a></td>
+      <td>01:55:20</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13149" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13150</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13150" title="Weltraum-Bestien (Sci-Fi in ganzer Länge, ganzer Film Deutsch, komplette Filme)"><img width="100px" src="https://i.ytimg.com/vi/kscPTje98H8/mqdefault.jpg" alt="Weltraum-Bestien (Sci-Fi in ganzer Länge, ganzer Film Deutsch, komplette Filme)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13150" title="Weltraum-Bestien (Sci-Fi in ganzer Länge, ganzer Film Deutsch, komplette Filme)">Weltraum-Bestien (Sci-Fi in ganzer Länge, ganzer Film Deutsch, komplette Filme)</a></td>
+      <td>01:21:47</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13150" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13151</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13151" title="Godzilla: Attack All Monsters (Action, Horror in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/f_60oEGqWhI/mqdefault.jpg" alt="Godzilla: Attack All Monsters (Action, Horror in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13151" title="Godzilla: Attack All Monsters (Action, Horror in ganzer Länge)">Godzilla: Attack All Monsters (Action, Horror in ganzer Länge)</a></td>
+      <td>01:09:32</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13151" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13152</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13152" title="World War II Inferno - Spezialeinheit Ostfront (Action, Drama in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/WD1g6BfBIlg/mqdefault.jpg" alt="World War II Inferno - Spezialeinheit Ostfront (Action, Drama in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13152" title="World War II Inferno - Spezialeinheit Ostfront (Action, Drama in ganzer Länge)">World War II Inferno - Spezialeinheit Ostfront (Action, Drama in ganzer Länge)</a></td>
+      <td>01:50:50</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13152" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13153</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13153" title="Battle Flag - Die Standarte (Action, Kriegsfilme auf Deutsch anschauen in voller Länge, ganzer Film)"><img width="100px" src="https://i.ytimg.com/vi/yItqilCor3M/mqdefault.jpg" alt="Battle Flag - Die Standarte (Action, Kriegsfilme auf Deutsch anschauen in voller Länge, ganzer Film)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13153" title="Battle Flag - Die Standarte (Action, Kriegsfilme auf Deutsch anschauen in voller Länge, ganzer Film)">Battle Flag - Die Standarte (Action, Kriegsfilme auf Deutsch anschauen in voller Länge, ganzer Film)</a></td>
+      <td>00:02:56</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13153" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13154</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13154" title="Kara Murat (Action, Abenteuer in ganzer Länge, Abenteuerfilme auf Deutsch anschauen in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/fSD9rA_go2c/mqdefault.jpg" alt="Kara Murat (Action, Abenteuer in ganzer Länge, Abenteuerfilme auf Deutsch anschauen in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13154" title="Kara Murat (Action, Abenteuer in ganzer Länge, Abenteuerfilme auf Deutsch anschauen in voller Länge)">Kara Murat (Action, Abenteuer in ganzer Länge, Abenteuerfilme auf Deutsch anschauen in voller Länge)</a></td>
+      <td>01:22:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13154" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13155</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13155" title="Pulp Dogs - The Grue Crew (Komödie, Action in voller Länge)"><img width="100px" src="https://i.ytimg.com/vi/4DoMi_-JbSM/mqdefault.jpg" alt="Pulp Dogs - The Grue Crew (Komödie, Action in voller Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13155" title="Pulp Dogs - The Grue Crew (Komödie, Action in voller Länge)">Pulp Dogs - The Grue Crew (Komödie, Action in voller Länge)</a></td>
+      <td>01:32:03</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13155" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13156</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13156" title="300 Killers  *HD* (Action, Spielfilm in ganzer Länge, Thriller Deutsch kompletter Film)"><img width="100px" src="https://i.ytimg.com/vi/jcr1-xOeymc/mqdefault.jpg" alt="300 Killers  *HD* (Action, Spielfilm in ganzer Länge, Thriller Deutsch kompletter Film)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13156" title="300 Killers  *HD* (Action, Spielfilm in ganzer Länge, Thriller Deutsch kompletter Film)">300 Killers  *HD* (Action, Spielfilm in ganzer Länge, Thriller Deutsch kompletter Film)</a></td>
+      <td>01:13:45</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13156" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13157</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13157" title="Locked Down (Action mit Vinnie Jones in ganzer Länge) *HD*"><img width="100px" src="https://i.ytimg.com/vi/5ChFpIRU398/mqdefault.jpg" alt="Locked Down (Action mit Vinnie Jones in ganzer Länge) *HD*"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13157" title="Locked Down (Action mit Vinnie Jones in ganzer Länge) *HD*">Locked Down (Action mit Vinnie Jones in ganzer Länge) *HD*</a></td>
+      <td>01:33:40</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13157" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13158</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13158" title="Der Letzte Mohikaner (Abenteuerfilm in ganzer Länge, komplette Filme auf Deutsch anschauen)"><img width="100px" src="https://i.ytimg.com/vi/f_wiHj3OCj8/mqdefault.jpg" alt="Der Letzte Mohikaner (Abenteuerfilm in ganzer Länge, komplette Filme auf Deutsch anschauen)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13158" title="Der Letzte Mohikaner (Abenteuerfilm in ganzer Länge, komplette Filme auf Deutsch anschauen)">Der Letzte Mohikaner (Abenteuerfilm in ganzer Länge, komplette Filme auf Deutsch anschauen)</a></td>
+      <td>02:04:24</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13158" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13159</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13159" title="Bruce Lee - Seine Erben nehmen Rache (Martial Arts, ganzer Film)"><img width="100px" src="https://i.ytimg.com/vi/aGlZORS2DJk/mqdefault.jpg" alt="Bruce Lee - Seine Erben nehmen Rache (Martial Arts, ganzer Film)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13159" title="Bruce Lee - Seine Erben nehmen Rache (Martial Arts, ganzer Film)">Bruce Lee - Seine Erben nehmen Rache (Martial Arts, ganzer Film)</a></td>
+      <td>01:26:12</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13159" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13160</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13160" title="Wang Yu - Stärker als tausend Kamikaze (Action, Martial Arts in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/t6N7sdvzLCE/mqdefault.jpg" alt="Wang Yu - Stärker als tausend Kamikaze (Action, Martial Arts in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13160" title="Wang Yu - Stärker als tausend Kamikaze (Action, Martial Arts in ganzer Länge)">Wang Yu - Stärker als tausend Kamikaze (Action, Martial Arts in ganzer Länge)</a></td>
+      <td>01:36:28</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13160" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13161</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13161" title="Spartacus - Der Grösste der Gladiatoren (Action, Abenteuer in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/iejYAvgL-gk/mqdefault.jpg" alt="Spartacus - Der Grösste der Gladiatoren (Action, Abenteuer in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13161" title="Spartacus - Der Grösste der Gladiatoren (Action, Abenteuer in ganzer Länge)">Spartacus - Der Grösste der Gladiatoren (Action, Abenteuer in ganzer Länge)</a></td>
+      <td>01:18:08</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13161" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13162</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13162" title="Spartacus - Der Gladiator von Rom (Action, Abenteuer in ganzer Länge)"><img width="100px" src="https://i.ytimg.com/vi/5wQCNjdrfo8/mqdefault.jpg" alt="Spartacus - Der Gladiator von Rom (Action, Abenteuer in ganzer Länge)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13162" title="Spartacus - Der Gladiator von Rom (Action, Abenteuer in ganzer Länge)">Spartacus - Der Gladiator von Rom (Action, Abenteuer in ganzer Länge)</a></td>
+      <td>01:23:31</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13162" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   	
+   <tr>
+      <td>13163</td>
+      <td><a href="?c=videoDetail&a=getByIdWithView&k=13163" title="Gunan - König Der Barbaren (Abenteuer, ganzer Film)"><img width="100px" src="https://i.ytimg.com/vi/5lh0NU4ZNCg/mqdefault.jpg" alt="Gunan - König Der Barbaren (Abenteuer, ganzer Film)"></a></td>
+      <td><b>Video :</b><a href="?c=videoDetail&a=getByIdWithView&k=13163" title="Gunan - König Der Barbaren (Abenteuer, ganzer Film)">Gunan - König Der Barbaren (Abenteuer, ganzer Film)</a></td>
+      <td>01:24:48</td>
+      <td><a target="_blank" href="youtube/?getfromlist=PLfEblejE-l3k-PYwP9a9KcCFipfzF-K-S" title="Add more video to this list">Add More Videos to the List</a></td>
+      <td><a class="delete" href="?c=videoDetail&a=removeById&k=13163" title="delete" onclick="return confirm('Are you sure?');">Delete</a></td>
+   </tr>
+   
+   </tbody>
+
+</table>
+</div>
+</body></html>
